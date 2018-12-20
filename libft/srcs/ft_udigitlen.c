@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_compid.c                                        :+:      :+:    :+:   */
+/*   ft_udigitlen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2018/12/20 17:45:37 by flcarre          ###   ########.fr       */
+/*   Created: 2018/12/20 18:35:45 by flcarre           #+#    #+#             */
+/*   Updated: 2018/12/20 18:39:44 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-unsigned long					ft_compid(char *id, t_id **list)
+unsigned int		ft_udigitlen(unsigned int n, unsigned int base)
 {
-	static unsigned int	pos = 1;
- 	unsigned long				i;
-	t_id								*e;
+	unsigned int	len;
 
-	i = 0;
-	e = ft_newid();
-	if (ft_atoui(id))
+	if (base < 2)
+		return (0);
+	len = (!n) ? 1 : 0;
+	while (n)
 	{
-
+		len++;
+		n /= base;
 	}
-	while (!e->w && id[i] && ft_isfm(id[i]))
-	{
-		e->fm |= ft_isfm(id[i]);
-		i++;
-	}
-	e->id = (ft_isid(id[i])) ? id[i] : '\0';
-	ft_enqueueid(list, e);
-	return (i + 1);
+	return (len);
 }

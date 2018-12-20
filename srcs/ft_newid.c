@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_compid.c                                        :+:      :+:    :+:   */
+/*   ft_newid.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2018/12/20 17:45:37 by flcarre          ###   ########.fr       */
+/*   Created: 2018/12/20 16:12:52 by flcarre           #+#    #+#             */
+/*   Updated: 2018/12/20 16:24:59 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned long					ft_compid(char *id, t_id **list)
+t_id		*ft_newid(void)
 {
-	static unsigned int	pos = 1;
- 	unsigned long				i;
-	t_id								*e;
+	t_id *new;
 
-	i = 0;
-	e = ft_newid();
-	if (ft_atoui(id))
-	{
-
-	}
-	while (!e->w && id[i] && ft_isfm(id[i]))
-	{
-		e->fm |= ft_isfm(id[i]);
-		i++;
-	}
-	e->id = (ft_isid(id[i])) ? id[i] : '\0';
-	ft_enqueueid(list, e);
-	return (i + 1);
+	if (!(new = (t_id *)ft_memalloc(sizeof(t_id))))
+		return ((void *)0);
+	new->pos = 0;
+	new->fm = 0;
+	new->w = 0;
+	new->p = 0;
+	new->id = 0;
+	arg.i = 0;
+	new->next = (void *)0;
+	new->sid[0].pos = 0;
+	new->sid[0].op = 0;
+	new->sid[1].pos = 0;
+	new->sid[1].op = 0;
+	return (new);
 }

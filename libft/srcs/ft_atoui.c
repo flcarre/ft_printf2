@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_compid.c                                        :+:      :+:    :+:   */
+/*   ft_atoui.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2018/12/20 17:45:37 by flcarre          ###   ########.fr       */
+/*   Created: 2018/12/20 15:39:44 by flcarre           #+#    #+#             */
+/*   Updated: 2018/12/20 15:43:02 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-unsigned long					ft_compid(char *id, t_id **list)
+unsigned int		ft_atoui(const char *str)
 {
-	static unsigned int	pos = 1;
- 	unsigned long				i;
-	t_id								*e;
+	unsigned long	r;
 
-	i = 0;
-	e = ft_newid();
-	if (ft_atoui(id))
-	{
-
-	}
-	while (!e->w && id[i] && ft_isfm(id[i]))
-	{
-		e->fm |= ft_isfm(id[i]);
-		i++;
-	}
-	e->id = (ft_isid(id[i])) ? id[i] : '\0';
-	ft_enqueueid(list, e);
-	return (i + 1);
+	r = 0;
+	while (ft_isspace((int)(*str)))
+		str++;
+	if (*str == '+')
+		str++;
+	while (ft_isdigit((int)(*str)))
+		r = r * 10 + *(str++) - '0';
+	return ((unsigned int)(r));
 }

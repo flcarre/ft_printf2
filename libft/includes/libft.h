@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lutsiara <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:44:47 by lutsiara          #+#    #+#             */
-/*   Updated: 2018/12/18 20:53:52 by lutsiara         ###   ########.fr       */
+/*   Updated: 2018/12/20 18:39:16 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ char				*ft_strnstr(const char *haystack, const char *needle, \
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, unsigned long n);
 int					ft_atoi(const char *str);
+unsigned int	ft_atoui(const char *str);
 int					ft_isspace(int c);
 int					ft_isdigit(int c);
 int					ft_isalpha(int c);
@@ -87,6 +88,7 @@ char				**ft_strtabnew(unsigned long size);
 void				*ft_strtabdel(char ***as);
 char				**ft_strsplit(char const *s, char c);
 unsigned int		ft_digitlen(int n, int base);
+unsigned int		ft_udigitlen(unsigned int n, unsigned int base);
 unsigned int		ft_ld_ldiglen(long double n, long double base);
 unsigned int		ft_d_ldiglen(double n, double base);
 char				*ft_itoa(int n);
