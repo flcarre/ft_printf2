@@ -5,6 +5,6 @@ int main(int argc, char const *argv[]) {
 	(void)argc;
 	(void)argv;
 
-	printf("%d\n", 30);
+	printf("%42d\n", 30);
 	return 0;
 }
