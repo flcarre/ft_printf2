@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2018/12/20 18:30:11 by flcarre          ###   ########.fr       */
+/*   Updated: 2018/12/20 22:07:57 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct					s_id
 	unsigned int					w;
 	unsigned int					p;
 	char									lm[3];
-	char									id;
+	char									id[10];
 	t_sid									sid[2];
 	t_var									arg;
 	struct s_id						*next;
@@ -67,7 +67,7 @@ void										ft_delid(t_id **list);
 void										ft_enqueueid(t_id **list, t_id *e);
 int											ft_idisnull(t_id *list);
 unsigned int						ft_idpos(t_id *list);
-unsigned long						ft_compid(char *id, t_id **list, unsigned long *i);
+unsigned long						ft_compid(char *id, t_id **list, unsigned long *r);
 void										ft_storetolist(char *s, unsigned long *i, t_list **str);
 int											ft_isid(char c);
 int											ft_isfm(char c);
