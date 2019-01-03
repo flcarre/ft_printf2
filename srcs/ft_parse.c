@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/03 20:30:56 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/03 23:27:40 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ t_id		*ft_parse(char *format, t_list **str, va_list *args)
 	{
 		(format[i[0]] == '%') ? ft_storetolist(format, i, str) : 0;
 		(format[i[0]] == '%') ? (r = ft_compid(format, &list, i)) : i[0]++;
-		// if (ft_idisnull(list) || ft_lmisnull(list) || r)
-		// {
-			// ft_delid(&list);
-			// return ((void *)0);
-		// }
+		if (ft_idisnull(list) || ft_lmisnull(list) || r)
+		{
+			ft_delid(&list);
+			ft_lstdel(str, &ft_delcontent);
+			return ((void *)0);
+		}
 	}
 	t_list	*l;
 	t_id 	*m;

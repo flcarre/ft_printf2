@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/03 21:37:54 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/03 23:15:00 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@ static void	ft_prec(unsigned long *i, char *id, t_id *e, unsigned int pos)
 	i[0]++;
 	if (id[i[0]] == '*')
 	{
-		e->w[0] = (e->w[0] != 0) ? pos - 2 : e->w[0];
+		e->w[1] = (e->w[1] != 0) ? pos - 2 : e->w[1];
 		e->p[1] = pos - 1;
 		i[0]++;
 		e->p[1] = (id[i[0] + \
 		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
 		ft_atoui(id + i[0]) : e->p[1];
-		i[0] += (id[i[0] + (unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] \
-		== '$') ? (unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
+		i[0] += (id[i[0] + \
+			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
+			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
 	}
 	else
 	{
@@ -45,8 +46,9 @@ static void	ft_width(unsigned long *i, char *id, t_id *e, unsigned int pos)
 		e->w[1] = (id[i[0] + \
 		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
 		ft_atoui(id + i[0]) : e->w[1];
-		i[0] += (id[i[0] + (unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] \
-		== '$') ? (unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
+		i[0] += (id[i[0] + \
+			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
+			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
 	}
 	else
 	{
@@ -60,10 +62,12 @@ static void	ft_pos(unsigned long *i, char *id, t_id *e, unsigned int pos)
 {
 	if (ft_atoui(id + i[0]))
 	{
-		e->pos = (id[i[0] + (unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] \
-							== '$') ? ft_atoui(id + i[0]) : e->pos;
-		i[0] += (id[i[0] + (unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] \
-		== '$') ? (unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
+		e->pos = (id[i[0] + \
+			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
+			ft_atoui(id + i[0]) : e->pos;
+		i[0] += (id[i[0] + \
+			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
+			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
 	}
 	else
 		e->pos = pos;
@@ -77,11 +81,11 @@ int			ft_compid(char *id, t_id **list, unsigned long *i)
 	if (!(e = ft_newid()))
 		return (1);
 	ft_enqueueid(list, e);
-	pos++;
 	i[0]++;
 	(ft_isid(id[i[0]]) == 5) ? ft_iscolor(i, id, e) : 0;
 	if (e->id[0])
 		return (0);
+	pos++;
 	ft_pos(i, id, e, pos);
 	while (id[i[0]] && ft_isfm(id[i[0]]))
 	{
