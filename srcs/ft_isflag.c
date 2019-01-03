@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 14:54:17 by flcarre           #+#    #+#             */
-/*   Updated: 2018/12/20 18:06:54 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/03 16:55:48 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_isflag(char *f, char *lm, unsigned long *i)
 	lm[1] = (ft_strncmp(f, "ll", n) == 0) ? 'l' : '\0';
 	lm[1] = (ft_strncmp(f, "hh", n) == 0) ? 'h' : '\0';
 	lm[2] = '\0';
-	*i += ft_strlen(lm);
+	i[0] += ft_strlen(lm);
 }

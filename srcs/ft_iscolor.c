@@ -6,6 +6,14 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/03 14:57:49 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/03 15:20:10 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/03 18:38:29 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_iscolor(unsigned long *i, char *s, char *id)
+{
+	if (!ft_strchr(s + i[0], (int)'}'))
+		return ;
+	i[0] += (s[i[0]] == '}') ? 1 : 0;
+	i[1] = i[0];
+}
