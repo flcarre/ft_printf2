@@ -6,8 +6,8 @@
 int main(int argc, char const *argv[]) {
 	(void)argc;
 	(void)argv;
-	printf("%.4f\n", 1.123456);
-	printf("%.4f\n", 1.123416);
+	printf("g%%{blue}1er%%lld2eme%%f%%i%%{red}fin%%{}\n\n");
+	ft_printf("g%{blue}1er%lld2eme%f%i%{red}fin%{}");
 	// printf("%.*Lf\n", LDBL_MAX_EXP, LDBL_MIN);
 	//printf("%.*Lf\n", LDBL_MAX_EXP, ft_ldexp(LDBL_MIN, 1));
 	//printf("%.*Lf\n", LDBL_MAX_EXP, ft_ldexp(ft_ldexp(LDBL_MIN, 1), -1));

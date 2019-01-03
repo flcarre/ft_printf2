@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2018/12/30 19:37:08 by lutsiara         ###   ########.fr        #
+#    Updated: 2019/01/03 20:47:50 by flcarre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,11 +110,22 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_ldtoa.c \
 		  $(LIBDIR)$(SRCDIR)ft_putwchar.c \
 		  $(LIBDIR)$(SRCDIR)ft_putwstr.c \
+		  $(LIBDIR)$(SRCDIR)ft_atoui.c \
+		  $(LIBDIR)$(SRCDIR)ft_udigitlen.c \
 		  $(LIBDIR)$(SRCDIR)get_next_line.c
 
 LIBOBJS = $(LIBSRCS:.c=.o)
 
-SRCS = #$(SRCDIR)ft_printf.c
+SRCS = $(SRCDIR)ft_printf.c \
+	   $(SRCDIR)ft_parse.c \
+	   $(SRCDIR)ft_compid.c \
+	   $(SRCDIR)ft_isid.c \
+	   $(SRCDIR)ft_iscolor.c \
+	   $(SRCDIR)ft_isflag.c \
+	   $(SRCDIR)ft_isfm.c \
+	   $(SRCDIR)ft_newid.c \
+	   $(SRCDIR)ft_storetolist.c \
+	   $(SRCDIR)ft_enqueueid.c
 
 OBJS = $(SRCS:.c=.o)
 

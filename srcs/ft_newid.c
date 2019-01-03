@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 16:12:52 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/03 17:08:17 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/03 20:45:54 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_id		*ft_newid(void)
 	new->p[0] = 0;
 	new->p[1] = 0;
 	ft_bzero((void *)new->id, 10);
-	arg.i = 0;
+	new->arg.i = 0;
 	new->next = (void *)0;
 	return (new);
 }

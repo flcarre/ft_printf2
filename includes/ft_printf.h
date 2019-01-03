@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/03 17:48:58 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/03 21:00:33 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,18 @@ typedef struct				s_id
 }							t_id;
 
 int							ft_printf(const char *format, ...);
-t_id						ft_parse(char *format, t_list **str, va_list *args);
+t_id						*ft_parse(char *format, t_list **str, va_list *args);
 t_id						*ft_newid(void);
 void						ft_delid(t_id **list);
 void						ft_enqueueid(t_id **list, t_id *e);
 int							ft_idisnull(t_id *list);
 unsigned int				ft_idpos(t_id *list);
 int							ft_compid(char *id, t_id **list, unsigned long *i);
-void						ft_storetolist(char *s, unsigned long *i, \
+int							ft_storetolist(char *s, unsigned long *i, \
 							t_list **str);
 int							ft_isid(char c);
 int							ft_isfm(char c);
+void						ft_iscolor(unsigned long *i, char *s, t_id *e);
 void						ft_isflag(char *f, char *lm, unsigned long *i);
 
 
