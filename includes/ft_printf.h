@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2018/12/28 21:54:11 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/03 15:44:17 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ typedef struct				s_id
 {
 	unsigned int			pos;
 	unsigned char			fm;
-	unsigned int			w;
-	unsigned int			p;
+	unsigned int			w[2];
+	unsigned int			p[2];
 	char					lm[3];
 	char					id[10];
 	t_sid					sid[2];
@@ -73,5 +73,6 @@ void						ft_storetolist(char *s, unsigned long *i, \
 int							ft_isid(char c);
 int							ft_isfm(char c);
 void						ft_isflag(char *f, char *lm, unsigned long *i);
+
 
 #endif
