@@ -3,21 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lutsiara <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:49:01 by lutsiara          #+#    #+#             */
-/*   Updated: 2018/11/23 15:51:04 by lutsiara         ###   ########.fr       */
+/*   Updated: 2018/12/28 22:43:08 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 long	ft_pow(long x, unsigned int n)
 {
-	long	r;
-
 	if (!n)
 		return (1);
-	r = 1;
-	while (n--)
-		r = r * x;
-	return (r);
+	return (x * ft_pow(x, n - 1));
 }

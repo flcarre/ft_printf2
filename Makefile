@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2018/12/18 20:52:53 by lutsiara         ###   ########.fr        #
+#    Updated: 2018/12/30 19:37:08 by lutsiara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,7 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 
 LIBOBJS = $(LIBSRCS:.c=.o)
 
-SRCS = $(SRCDIR)ft_printf.c
+SRCS = #$(SRCDIR)ft_printf.c
 
 OBJS = $(SRCS:.c=.o)
 

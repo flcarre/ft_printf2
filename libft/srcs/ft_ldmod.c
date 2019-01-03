@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ldmod.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lutsiara <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 15:51:34 by lutsiara          #+#    #+#             */
-/*   Updated: 2018/12/19 15:08:12 by lutsiara         ###   ########.fr       */
+/*   Updated: 2018/12/29 22:02:31 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ long double		ft_ldmod(long double x, long double mod)
 
 	if (mod == 0.0)
 		return (0.0);
-	res = ft_dabs(x);
-	mod = ft_dabs(mod);
+	res = ft_ldabs(x);
+	mod = ft_ldabs(mod);
 	ft_ldfrexp(mod, &em);
 	while (res >= mod)
 	{

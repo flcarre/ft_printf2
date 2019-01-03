@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtabnew.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lutsiara <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 15:50:00 by lutsiara          #+#    #+#             */
 /*   Updated: 2018/11/14 14:16:49 by lutsiara         ###   ########.fr       */

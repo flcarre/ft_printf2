@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ldtoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lutsiara <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 17:17:57 by lutsiara          #+#    #+#             */
-/*   Updated: 2018/12/18 20:40:26 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/03 11:53:02 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 char		*ft_ldtoa(long double x)
 {
 	char			*a;
+	char			*p;
 	unsigned int	i;
+	t_u_ieee_ld		u;
 
-	a = 0;
+	a = (void *)0;
 	i = ft_ld_ldiglen(x, 10.0L);
+	u.ld = x;
 	return (a);
 }
