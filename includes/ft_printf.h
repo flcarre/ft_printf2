@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/04 01:52:19 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/04 02:07:45 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,6 @@
 # include "../libft/includes/get_next_line.h"
 # include <stdarg.h>
 # include <wchar.h>
-
-typedef struct				s_f
-{
-		void				(*f)(va_list *, unsigned int, t_var *);
-		char				lm[3];
-		char				id[10];
-}							t_f;
 
 typedef union				u_var
 {
@@ -71,6 +64,22 @@ int							ft_isid(char c);
 int							ft_isfm(char c);
 void						ft_iscolor(unsigned long *i, char *s, t_id *e);
 void						ft_isflag(char *f, char *lm, unsigned long *i);
+void						ft_get0(va_list *arg, unsigned int i, t_var *u);
+void						ft_get1(va_list *arg, unsigned int i, t_var *u);
+void						ft_get2(va_list *arg, unsigned int i, t_var *u);
+void						ft_get3(va_list *arg, unsigned int i, t_var *u);
+void						ft_get4(va_list *arg, unsigned int i, t_var *u);
+void						ft_get5(va_list *arg, unsigned int i, t_var *u);
+void						ft_get6(va_list *arg, unsigned int i, t_var *u);
+void						ft_get7(va_list *arg, unsigned int i, t_var *u);
+void						ft_get8(va_list *arg, unsigned int i, t_var *u);
+void						ft_get9(va_list *arg, unsigned int i, t_var *u);
+void						ft_get10(va_list *arg, unsigned int i, t_var *u);
+void						ft_get11(va_list *arg, unsigned int i, t_var *u);
+void						ft_get12(va_list *arg, unsigned int i, t_var *u);
+void						ft_get13(va_list *arg, unsigned int i, t_var *u);
+void						ft_get14(va_list *arg, unsigned int i, t_var *u);
+
 
 
 #endif
