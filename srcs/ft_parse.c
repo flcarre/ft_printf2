@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/04 00:37:12 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/04 04:15:02 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 t_id		*ft_parse(char *format, t_list **str, va_list *args)
 {
 	t_id			*list;
+	t_id			*l;
 	unsigned long	i[2];
 	int				r;
 
@@ -35,7 +36,12 @@ t_id		*ft_parse(char *format, t_list **str, va_list *args)
 			return ((void *)0);
 		}
 	}
-
+	l = list;
+	while (l)
+	{
+		ft_getarg(args, l);
+		l = l->next;
+	}
 	/*
 	t_list	*l;
 	t_id 	*m;

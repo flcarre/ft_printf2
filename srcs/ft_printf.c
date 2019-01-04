@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:04:14 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/03 20:38:19 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/04 04:05:42 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		ft_printf(const char *format, ...)
 	str = (void *)0;
 	va_start(args, format);
 	list = ft_parse((char *)format, &str, &args);
+	ft_
 	va_end(args);
 	return ((int)ft_strlen(format));
 }

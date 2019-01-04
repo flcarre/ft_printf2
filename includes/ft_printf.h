@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/04 02:07:45 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/04 04:16:13 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct				s_id
 	unsigned int			p[2];
 	char					lm[3];
 	char					id[10];
+	char					*s;
 	t_var					arg;
 	struct s_id				*next;
 }							t_id;
@@ -64,6 +65,7 @@ int							ft_isid(char c);
 int							ft_isfm(char c);
 void						ft_iscolor(unsigned long *i, char *s, t_id *e);
 void						ft_isflag(char *f, char *lm, unsigned long *i);
+void						ft_getarg(va_list *args, t_id *e);
 void						ft_get0(va_list *arg, unsigned int i, t_var *u);
 void						ft_get1(va_list *arg, unsigned int i, t_var *u);
 void						ft_get2(va_list *arg, unsigned int i, t_var *u);
