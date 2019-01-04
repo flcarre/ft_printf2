@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 02:05:05 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/04 02:13:53 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/04 02:35:50 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct				s_f
 		char				id[10];
 }							t_f;
 
-t_f							glo[] = {
+t_f							glo_get[] = {
 							{&ft_get0, "", "i"},
 							{&ft_get1, "h", "i"},
 							{&ft_get2, "hh", "i"},
@@ -63,6 +63,6 @@ t_f							glo[] = {
 							{&ft_get14, "L", "g"},
 							{&ft_get13, "", "e"},
 							{&ft_get14, "L", "e"}
-}
+};
 
 #endif
