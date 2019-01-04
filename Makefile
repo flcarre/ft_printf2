@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/01/03 20:47:50 by flcarre          ###   ########.fr        #
+#    Updated: 2019/01/04 00:13:00 by flcarre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,6 +120,8 @@ SRCS = $(SRCDIR)ft_printf.c \
 	   $(SRCDIR)ft_parse.c \
 	   $(SRCDIR)ft_compid.c \
 	   $(SRCDIR)ft_isid.c \
+	   $(SRCDIR)ft_idisnull.c \
+	   $(SRCDIR)ft_lmisnull.c \
 	   $(SRCDIR)ft_iscolor.c \
 	   $(SRCDIR)ft_isflag.c \
 	   $(SRCDIR)ft_isfm.c \

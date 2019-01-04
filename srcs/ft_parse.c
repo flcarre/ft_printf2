@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/03 23:27:40 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/04 00:37:12 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ t_id		*ft_parse(char *format, t_list **str, va_list *args)
 			return ((void *)0);
 		}
 	}
+
+	/*
 	t_list	*l;
 	t_id 	*m;
 	l = *str;
@@ -45,6 +47,6 @@ t_id		*ft_parse(char *format, t_list **str, va_list *args)
 		printf("pos = %d\nfm = %d\nw0 = %d\nw1 = %d\np0 = %d\np1 = %d\nlm = %s\nid = %s\n\n\n", m->pos, m->fm, m->w[0], m->w[1], m->p[0], m->p[1], m->lm, m->id);
 		l = l->next;
 		m = m->next;
-	}
+	}*/
 	return (list);
 }

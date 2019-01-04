@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/03 21:00:33 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/04 01:52:19 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 # include "../libft/includes/get_next_line.h"
 # include <stdarg.h>
 # include <wchar.h>
+
+typedef struct				s_f
+{
+		void				(*f)(va_list *, unsigned int, t_var *);
+		char				lm[3];
+		char				id[10];
+}							t_f;
 
 typedef union				u_var
 {
@@ -29,11 +36,7 @@ typedef union				u_var
 		double				d;
 		long double			ld;
 		char				*cp;
-		short				*sp;
-		long				*lp;
-		long long			*llp;
 		wchar_t				*wp;
-		int					*ip;
 		unsigned int		ui;
 		unsigned char		uc;
 		unsigned short		us;
@@ -59,6 +62,7 @@ t_id						*ft_newid(void);
 void						ft_delid(t_id **list);
 void						ft_enqueueid(t_id **list, t_id *e);
 int							ft_idisnull(t_id *list);
+int							ft_lmisnull(t_id *list);
 unsigned int				ft_idpos(t_id *list);
 int							ft_compid(char *id, t_id **list, unsigned long *i);
 int							ft_storetolist(char *s, unsigned long *i, \

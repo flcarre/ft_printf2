@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_storetolist.c                                   :+:      :+:    :+:   */
+/*   ft_lmisnull.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/02 13:56:55 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/03 23:32:46 by flcarre          ###   ########.fr       */
+/*   Created: 2018/12/20 17:45:01 by flcarre           #+#    #+#             */
+/*   Updated: 2019/01/03 23:31:48 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_storetolist(char *s, unsigned long *i, t_list **str)
+int		ft_lmisnull(t_id *list)
 {
-	t_list	*e;
-
-	if (!(e = ft_lstnew((void *)0, 0)))
-		return (1);
-	e->content = (void *)ft_strsub(s, i[1], i[0] - i[1]);
-	e->content_size = ft_strlen((char *)e->content) + 1;
-	e->next = (void *)0;
-	ft_lstenqueue(str, e);
-	return (0);
+	if (!list)
+		return (0);
+	if (list->next)
+		return (ft_lmisnull(list->next));
+	return ((list->lm[0]) ? 0 : 1);
 }
