@@ -6,13 +6,13 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/03 23:15:00 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/07 20:20:40 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_prec(unsigned long *i, char *id, t_id *e, unsigned int pos)
+static void		ft_prec(unsigned long *i, char *id, t_id *e, unsigned int pos)
 {
 	if (id[i[0]] != '.')
 		return ;
@@ -37,7 +37,7 @@ static void	ft_prec(unsigned long *i, char *id, t_id *e, unsigned int pos)
 	}
 }
 
-static void	ft_width(unsigned long *i, char *id, t_id *e, unsigned int pos)
+static void		ft_width(unsigned long *i, char *id, t_id *e, unsigned int pos)
 {
 	if (id[i[0]] == '*')
 	{
@@ -58,7 +58,7 @@ static void	ft_width(unsigned long *i, char *id, t_id *e, unsigned int pos)
 	}
 }
 
-static void	ft_pos(unsigned long *i, char *id, t_id *e, unsigned int pos)
+static void		ft_pos(unsigned long *i, char *id, t_id *e, unsigned int pos)
 {
 	if (ft_atoui(id + i[0]))
 	{
@@ -73,7 +73,7 @@ static void	ft_pos(unsigned long *i, char *id, t_id *e, unsigned int pos)
 		e->pos = pos;
 }
 
-int			ft_compid(char *id, t_id **list, unsigned long *i)
+unsigned int	ft_compid(char *id, t_id **list, unsigned long *i)
 {
 	static unsigned int	pos = 0;
 	t_id				*e;

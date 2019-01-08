@@ -6,19 +6,19 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/04 04:15:02 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/07 20:22:59 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-t_id		*ft_parse(char *format, t_list **str, va_list *args)
+t_id		*ft_parse(char *format, t_list **s, va_list *args)
 {
 	t_id			*list;
 	t_id			*l;
 	unsigned long	i[2];
-	int				r;
+	unsigned int	r;
 
 	(void)args;
 	i[0] = 0;
@@ -27,12 +27,12 @@ t_id		*ft_parse(char *format, t_list **str, va_list *args)
 	list = (void *)0;
 	while (format[i[0]])
 	{
-		(format[i[0]] == '%') ? ft_storetolist(format, i, str) : 0;
+		(format[i[0]] == '%') ? ft_storetolist(format, i, s) : 0;
 		(format[i[0]] == '%') ? (r = ft_compid(format, &list, i)) : i[0]++;
 		if (ft_idisnull(list) || ft_lmisnull(list) || r)
 		{
 			ft_delid(&list);
-			ft_lstdel(str, &ft_delcontent);
+			ft_lstdel(s, &ft_delcontent);
 			return ((void *)0);
 		}
 	}
