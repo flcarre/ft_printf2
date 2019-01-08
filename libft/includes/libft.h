@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:44:47 by lutsiara          #+#    #+#             */
-/*   Updated: 2018/12/30 19:38:24 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/08 18:15:13 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,15 @@ unsigned long		ft_countword(char const *s, char c);
 char				**ft_strtabnew(unsigned long size);
 void				*ft_strtabdel(char ***as);
 char				**ft_strsplit(char const *s, char c);
-unsigned int		ft_digitlen(int n, int base);
-unsigned int		ft_udigitlen(unsigned int n, unsigned int base);
+unsigned int		ft_digitlen(long long n, int base);
+unsigned int		ft_udigitlen(unsigned long long n, unsigned int base);
 unsigned int		ft_ld_ldiglen(long double n, long double base);
 unsigned int		ft_d_ldiglen(double n, double base);
 char				*ft_itoa(int n);
+char				*ft_lltoa(long long n);
+char				*ft_ulltoa(unsigned long long n);
+char				*ft_lltoa_base(long long n, char const *base);
+char				*ft_ulltoa_base(unsigned long long n, char const *base);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr(char const *s);

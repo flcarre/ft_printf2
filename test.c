@@ -2,7 +2,6 @@
 #include <limits.h>
 #include <float.h>
 #include "includes/ft_printf.h"
-#include "libft/includes/ft_ieee.h"
 
 /*
 static int f(int i, ...)
@@ -40,6 +39,8 @@ int main(int argc, char const *argv[]) {
 	//printf("%.*Lf\n", LDBL_MAX_EXP * 2 - 16323, 42.0L + 3.6451995318824746025E-4951L);
 	//printf("%d\n", f(6, 1, "abc", 4));
 	//printf("1.21 = %.2f\n", 1.215);
-	
+	char	*a;
+	a = ft_ldtoa(0.42L);
+	printf("%s\n", a);
 	return 0;
 }

@@ -6,11 +6,11 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 11:21:08 by lutsiara          #+#    #+#             */
-/*   Updated: 2018/12/28 21:47:30 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/08 17:06:52 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_digitlen(int n, int base)
+unsigned int	ft_digitlen(long long n, int base)
 {
 	unsigned int	len;
 
@@ -21,7 +21,7 @@ unsigned int	ft_digitlen(int n, int base)
 	while (n)
 	{
 		len++;
-		n /= base;
+		n /= (long long)base;
 	}
 	return (len);
 }

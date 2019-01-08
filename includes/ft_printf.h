@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/07 20:22:11 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/08 16:44:45 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef union				u_var
 		wint_t				w;
 		double				d;
 		long double			ld;
+		void				*p;
 		char				*cp;
 		wchar_t				*wp;
 		unsigned int		ui;
