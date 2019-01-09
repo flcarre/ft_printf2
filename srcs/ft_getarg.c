@@ -6,17 +6,18 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 00:22:45 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/08 16:48:00 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/09 16:47:09 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_glo.h"
 
-static void	ft_get(va_list *arg, unsigned int i, t_var *u)
+static void	ft_get(va_list *arg, unsigned int i, t_var *u, t_id *e)
 {
 	while (i--)
 		(*u).p = va_arg(*arg, void *);
-}
+	e->a = (*u).p;
+ }
 
 void		ft_getarg(va_list *args, t_id *e)
 {

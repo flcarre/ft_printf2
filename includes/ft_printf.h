@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/08 16:44:45 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/09 16:39:58 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct				s_id
 	char					id[10];
 	char					*s;
 	t_var					arg;
+	void					*a;
 	struct s_id				*next;
 }							t_id;
 
