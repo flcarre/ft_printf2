@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fm.c                                            :+:      :+:    :+:   */
+/*   ft_plus.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 12:40:01 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/10 14:18:44 by flcarre          ###   ########.fr       */
+/*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
+/*   Updated: 2019/01/10 14:18:21 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_glo.h"
+#include "ft_printf.h"
 
-void ft_fm(t_id *e)
+void	ft_plus(t_id *e)
 {
-	int b;
-	int i;
+	char	*tmp;
 
-	b = 1;
-	i = 0;
-	while (b < 32 && ++i)
+	if (!ft_signconv(e->id[0]))
+		return ;
+	if (e->s[0] != '-')
 	{
-		if (e->fm & b == b)
-		{
-			glo_fm[i - 1](e);
-		}
-		b = b * 2;
+		tmp = e->s;
+		e->s = ft_strjoin("+", e->s);
+		ft_memdel(&tmp);
 	}
 }

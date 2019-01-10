@@ -35,6 +35,9 @@ int main(int argc, char const *argv[]) {
 	// printf("%.*Lf\n", LDBL_MAX_EXP * 2 - 16323, 3.6451995318824746025E-4951L);
 	// printf("%d\n", f(6, 1, "abc", 4));
 // write(1, "\033[1;30m"Bhdjkhjkdjksfhks", 100);
-	printf("%d\n", 23);
+	// printf("%-30d\n", 23);
+	// printf("%30d\n", 23);
+	 printf("%+s\n", "AZDZDD");
+
 	return 0;
 }
