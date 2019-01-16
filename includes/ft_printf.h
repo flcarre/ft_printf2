@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/13 15:45:44 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/16 17:23:07 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct				s_id
 {
 	unsigned int			pos;
 	unsigned char			fm;
-	unsigned int			w[4];
+	unsigned int			w[3];
 	unsigned int			p[2];
 	char					lm[3];
 	char					id[10];

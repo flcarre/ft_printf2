@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <float.h>
 #include "includes/ft_printf.h"
-
+/*
 static int f(int i, ...)
 {
 	va_list	args;
@@ -15,7 +15,7 @@ static int f(int i, ...)
 	va_end(args);
 	return(tmp);
 }
-
+*/
 int main(int argc, char const *argv[]) {
 	(void)argc;
 	(void)argv;
@@ -38,8 +38,12 @@ int main(int argc, char const *argv[]) {
 	// printf("%-30d\n", 23);
 	// printf("%30d\n", 23);
 	 // printf("%+s\n", "AZDZDD");
-	 printf("%f\n", (float)3);
-	 printf("%#f\n", (float)3);
-
+	 // printf("%f\n", (float)3);
+	 // printf("%#f\n", (float)3);
+	 // printf("%06.3d\n", 4);
+	 // printf("%.3d\n", 4);
+	 // printf("%.3s\n", "ok");
+	 // printf("%#.4x\n", 42);
+	 printf("%+04d\n", 42);
 	return 0;
 }
