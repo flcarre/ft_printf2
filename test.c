@@ -37,7 +37,9 @@ int main(int argc, char const *argv[]) {
 // write(1, "\033[1;30m"Bhdjkhjkdjksfhks", 100);
 	// printf("%-30d\n", 23);
 	// printf("%30d\n", 23);
-	 printf("%+s\n", "AZDZDD");
+	 // printf("%+s\n", "AZDZDD");
+	 printf("%f\n", (float)3);
+	 printf("%#f\n", (float)3);
 
 	return 0;
 }

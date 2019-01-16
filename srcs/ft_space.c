@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newid.c                                         :+:      :+:    :+:   */
+/*   ft_space.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 16:12:52 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/13 15:45:58 by flcarre          ###   ########.fr       */
+/*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
+/*   Updated: 2019/01/10 15:41:10 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_id		*ft_newid(void)
+void	ft_space(t_id *e)
 {
-	t_id *new;
+	char	*tmp;
 
-	if (!(new = (t_id *)ft_memalloc(sizeof(t_id))))
-		return ((void *)0);
-	new->pos = 0;
-	new->fm = 0;
-	new->w[0] = 0;
-	new->w[1] = 0;
-	new->w[2] = 0;
-	new->w[3] = 0;
-	new->p[0] = 0;
-	new->p[1] = 0;
-	ft_bzero((void *)new->id, 10);
-	new->arg.i = 0;
-	new->next = (void *)0;
-	return (new);
+	if (!ft_signconv(e->id[0]))
+		return ;
+	if (e->s[0] != '-')
+	{
+		tmp = e->s;
+		e->s = ft_strjoin(" ", e->s);
+		ft_memdel(&tmp);
+	}
 }

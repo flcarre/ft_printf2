@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newid.c                                         :+:      :+:    :+:   */
+/*   ft_dies.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/20 16:12:52 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/13 15:45:58 by flcarre          ###   ########.fr       */
+/*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
+/*   Updated: 2019/01/16 10:33:01 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_id		*ft_newid(void)
+void	ft_dies(t_id *e)
 {
-	t_id *new;
-
-	if (!(new = (t_id *)ft_memalloc(sizeof(t_id))))
-		return ((void *)0);
-	new->pos = 0;
-	new->fm = 0;
-	new->w[0] = 0;
-	new->w[1] = 0;
-	new->w[2] = 0;
-	new->w[3] = 0;
-	new->p[0] = 0;
-	new->p[1] = 0;
-	ft_bzero((void *)new->id, 10);
-	new->arg.i = 0;
-	new->next = (void *)0;
-	return (new);
+	if (id[0] == 'o')
+		ft_strjoin("0", e->s);
+	if (id[0] == 'x')
+		ft_strjoin("0x", e->s);
+	if (id[0] == 'X')
+		ft_strjoin("0X", e->s);
+	if ((id[0] == 'e' || id[0] == 'f' || id[0] == 'g') && (e->p[0] == 0))
+	{
+		ft_strjoin(e->s, '.');
+	}
 }
