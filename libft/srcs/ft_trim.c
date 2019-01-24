@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dclassify.c                                     :+:      :+:    :+:   */
+/*   ft_trim.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/18 20:51:22 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/21 20:06:28 by lutsiara         ###   ########.fr       */
+/*   Created: 2019/01/24 00:46:20 by lutsiara          #+#    #+#             */
+/*   Updated: 2019/01/24 01:12:17 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <float.h>
-#include <math.h>
-#include "ft_ieee.h"
+#include "libft.h"
 
-int		ft_dclassify(double x)
+void	ft_trim(char **s)
 {
-	t_u_ieee_d		u;
+	char	*tmp;
+	char	*del;
 
-	u.d = x;
-	if (u.sd.e == 0)
-	{
-		if ((u.sd.fl | u.sd.fh) == 0)
-			return (FP_ZERO);
-		return (FP_SUBNORMAL);
-	}
-	if (u.sd.e == D_EXP_INFNAN)
-	{
-		if ((u.sd.fl | u.sd.fh) == 0)
-			return (FP_INFINITE);
-		return (FP_NAN);
-	}
-	return (FP_NORMAL);
+	tmp = *s + ft_strlen(*s) - 1;
+	while (*tmp == '0')
+		tmp--;
+	tmp++;
+	*tmp = '\0';
+	tmp = *s;
+	while (*tmp == '0' && *(tmp + 1) != '.')
+		tmp++;
+	del = *s;
+	*s = ft_strdup(tmp);
+	ft_memdel((void **)&del);
 }

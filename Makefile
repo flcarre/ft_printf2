@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/01/07 20:17:37 by lutsiara         ###   ########.fr        #
+#    Updated: 2019/01/24 01:04:19 by lutsiara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,33 +105,38 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_dfrexp.c \
 		  $(LIBDIR)$(SRCDIR)ft_ldexp.c \
 		  $(LIBDIR)$(SRCDIR)ft_dexp.c \
-		  $(LIBDIR)$(SRCDIR)ft_ldclassify.c \
+		  $(LIBDIR)$(SRCDIR)ft_isnan.c \
+		  $(LIBDIR)$(SRCDIR)ft_isinf.c \
 		  $(LIBDIR)$(SRCDIR)ft_dclassify.c \
+		  $(LIBDIR)$(SRCDIR)ft_signbit.c \
 		  $(LIBDIR)$(SRCDIR)ft_ldtoa.c \
 		  $(LIBDIR)$(SRCDIR)ft_putwchar.c \
 		  $(LIBDIR)$(SRCDIR)ft_putwstr.c \
 		  $(LIBDIR)$(SRCDIR)ft_atoui.c \
+		  $(LIBDIR)$(SRCDIR)ft_strstore.c \
+		  $(LIBDIR)$(SRCDIR)ft_ull.c \
+		  $(LIBDIR)$(SRCDIR)ft_trim.c \
 		  $(LIBDIR)$(SRCDIR)ft_udigitlen.c \
 		  $(LIBDIR)$(SRCDIR)get_next_line.c
 
 LIBOBJS = $(LIBSRCS:.c=.o)
 
-SRCS = $(SRCDIR)ft_printf.c \
-	   $(SRCDIR)ft_parse.c \
-	   $(SRCDIR)ft_compid.c \
-	   $(SRCDIR)ft_isid.c \
-	   $(SRCDIR)ft_idisnull.c \
-	   $(SRCDIR)ft_lmisnull.c \
-	   $(SRCDIR)ft_iscolor.c \
-	   $(SRCDIR)ft_isflag.c \
-	   $(SRCDIR)ft_isfm.c \
-	   $(SRCDIR)ft_newid.c \
-	   $(SRCDIR)ft_getarg.c \
-	   $(SRCDIR)ft_get1.c \
-	   $(SRCDIR)ft_get2.c \
-	   $(SRCDIR)ft_get3.c \
-	   $(SRCDIR)ft_storetolist.c \
-	   $(SRCDIR)ft_enqueueid.c
+SRCS = #$(SRCDIR)ft_printf.c \
+#	   $(SRCDIR)ft_parse.c \
+#	   $(SRCDIR)ft_compid.c \
+#	   $(SRCDIR)ft_isid.c \
+#	   $(SRCDIR)ft_idisnull.c \
+#	   $(SRCDIR)ft_lmisnull.c \
+#	   $(SRCDIR)ft_iscolor.c \
+#	   $(SRCDIR)ft_isflag.c \
+#	   $(SRCDIR)ft_isfm.c \
+#	   $(SRCDIR)ft_newid.c \
+#	   $(SRCDIR)ft_getarg.c \
+#	   $(SRCDIR)ft_get1.c \
+#	   $(SRCDIR)ft_get2.c \
+#	   $(SRCDIR)ft_get3.c \
+#	   $(SRCDIR)ft_storetolist.c \
+#	   $(SRCDIR)ft_enqueueid.c
 
 OBJS = $(SRCS:.c=.o)
 

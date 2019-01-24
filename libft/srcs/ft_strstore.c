@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dclassify.c                                     :+:      :+:    :+:   */
+/*   ft_strstore.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/18 20:51:22 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/21 20:06:28 by lutsiara         ###   ########.fr       */
+/*   Created: 2019/01/23 17:46:18 by lutsiara          #+#    #+#             */
+/*   Updated: 2019/01/23 18:07:30 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <float.h>
-#include <math.h>
-#include "ft_ieee.h"
+#include "libft.h"
 
-int		ft_dclassify(double x)
+void	ft_strstore(char **a, char *s, unsigned long n)
 {
-	t_u_ieee_d		u;
+	char			*tmp;
+	unsigned long	i;
+	unsigned long	len;
 
-	u.d = x;
-	if (u.sd.e == 0)
+	len = (*a) ? ft_strlen(*a) : 0;
+	tmp = *a;
+	if (!(*a = ft_strnew(len + n)))
+		return ;
+	i = 0;
+	while (tmp && tmp[i])
 	{
-		if ((u.sd.fl | u.sd.fh) == 0)
-			return (FP_ZERO);
-		return (FP_SUBNORMAL);
+		(*a)[i] = tmp[i];
+		i++;
 	}
-	if (u.sd.e == D_EXP_INFNAN)
-	{
-		if ((u.sd.fl | u.sd.fh) == 0)
-			return (FP_INFINITE);
-		return (FP_NAN);
-	}
-	return (FP_NORMAL);
+	ft_memdel((void **)&tmp);
+	while (n--)
+		(*a)[i++] = *(s++);
+	(*a)[i] = '\0';
 }

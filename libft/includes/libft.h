@@ -6,12 +6,17 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:44:47 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/08 18:15:13 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/24 01:03:41 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define SIZE_D_TX (DBL_MANT_DIG + 28) / 29 + 1 + \
+					(DBL_MAX_EXP + DBL_MANT_DIG + 28 + 8) / 9
+# define SIZE_LD_TX (LDBL_MANT_DIG + 28) / 29 + 1 + \
+					(LDBL_MAX_EXP + LDBL_MANT_DIG + 28 + 8) / 9
 
 typedef struct		s_list
 {
@@ -20,8 +25,13 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+void				ft_strstore(char **a, char *s, unsigned long n);
+void				ft_trim(char **s);
+char				*ft_ull(unsigned long long x, char *s);
+int					ft_signbit(double *x, long double *lx);
+int					ft_isnan(long double x);
+int					ft_isinf(long double x);
 int					ft_dclassify(double x);
-int					ft_ldclassify(long double x);
 long double			ft_ldmod(long double x, long double mod);
 double				ft_dmod(double x, double mod);
 double				ft_dfrexp(double x, int *p);

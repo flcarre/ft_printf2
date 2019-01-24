@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dclassify.c                                     :+:      :+:    :+:   */
+/*   ft_ull.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/18 20:51:22 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/21 20:06:28 by lutsiara         ###   ########.fr       */
+/*   Created: 2019/01/23 17:35:14 by lutsiara          #+#    #+#             */
+/*   Updated: 2019/01/23 17:44:14 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <float.h>
-#include <math.h>
-#include "ft_ieee.h"
+#include <limits.h>
 
-int		ft_dclassify(double x)
+char	*ft_ull(unsigned long long x, char *s)
 {
-	t_u_ieee_d		u;
+	unsigned long	y;
 
-	u.d = x;
-	if (u.sd.e == 0)
+	while (x > ULONG_MAX)
 	{
-		if ((u.sd.fl | u.sd.fh) == 0)
-			return (FP_ZERO);
-		return (FP_SUBNORMAL);
+		*(--s) = '0' + x % 10;
+		x /= 10;
 	}
-	if (u.sd.e == D_EXP_INFNAN)
+	y = x;
+	while (y)
 	{
-		if ((u.sd.fl | u.sd.fh) == 0)
-			return (FP_INFINITE);
-		return (FP_NAN);
+		*(--s) = '0' + y % 10;
+		y /= 10;
 	}
-	return (FP_NORMAL);
+	return (s);
 }
