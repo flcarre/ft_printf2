@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prec.c                                          :+:      :+:    :+:   */
+/*   ft_wstrnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 11:32:41 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/16 21:40:48 by flcarre          ###   ########.fr       */
+/*   Created: 2018/11/08 11:16:58 by lutsiara          #+#    #+#             */
+/*   Updated: 2019/02/03 16:02:15 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_prec(t_id *e, va_list *arg)
-{
-	
-	if (ft_isid(id[0]) == 3)
-	{
+#include "libft.h"
 
-	}
+int		*ft_strnew(unsigned long size)
+{
+	return ((int *)ft_memalloc((size + 1) * sizeof(int)));
 }

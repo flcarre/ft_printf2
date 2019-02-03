@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_glo.h                                           :+:      :+:    :+:   */
+/*   ft_glo_get.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 02:05:05 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/10 14:18:31 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/25 00:15:27 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GLO_H
-# define FT_GLO_H
+#ifndef FT_GLO_GET_H
+# define FT_GLO_GET_H
 
 # include "ft_printf.h"
 
@@ -21,11 +21,6 @@ typedef struct				s_f
 		char				lm[3];
 		char				id[10];
 }							t_f;
-
-typedef struct				s_fm
-{
-		void				(*f)(t_id *e);
-}							t_fm;
 
 t_f							glo_get[] = {
 							{&ft_get0, "", "i"},
@@ -68,14 +63,6 @@ t_f							glo_get[] = {
 							{&ft_get14, "L", "g"},
 							{&ft_get13, "", "e"},
 							{&ft_get14, "L", "e"}
-};
-
-ft_fm						glo_fm[] = {
-							{&ft_plus},
-							{&ft_space},
-							{&ft_minus},
-							{&ft_zero},
-							{&ft_dies}
 };
 
 #endif

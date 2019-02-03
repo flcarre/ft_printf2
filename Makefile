@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/01/24 01:04:19 by lutsiara         ###   ########.fr        #
+#    Updated: 2019/02/03 17:06:28 by lutsiara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_memdel.c \
 		  $(LIBDIR)$(SRCDIR)ft_memmove.c \
 		  $(LIBDIR)$(SRCDIR)ft_memset.c \
+		  $(LIBDIR)$(SRCDIR)ft_wmemset.c \
 		  $(LIBDIR)$(SRCDIR)ft_putchar.c \
 		  $(LIBDIR)$(SRCDIR)ft_putchar_fd.c \
 		  $(LIBDIR)$(SRCDIR)ft_putendl.c \
@@ -69,12 +70,15 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_strcpy.c \
 		  $(LIBDIR)$(SRCDIR)ft_strdel.c \
 		  $(LIBDIR)$(SRCDIR)ft_strdup.c \
+		  $(LIBDIR)$(SRCDIR)ft_wstrdup.c \
 		  $(LIBDIR)$(SRCDIR)ft_strequ.c \
 		  $(LIBDIR)$(SRCDIR)ft_striter.c \
 		  $(LIBDIR)$(SRCDIR)ft_striteri.c \
 		  $(LIBDIR)$(SRCDIR)ft_strjoin.c \
+		  $(LIBDIR)$(SRCDIR)ft_wstrjoin.c \
 		  $(LIBDIR)$(SRCDIR)ft_strlcat.c \
 		  $(LIBDIR)$(SRCDIR)ft_strlen.c \
+		  $(LIBDIR)$(SRCDIR)ft_wstrlen.c \
 		  $(LIBDIR)$(SRCDIR)ft_strmap.c \
 		  $(LIBDIR)$(SRCDIR)ft_strmapi.c \
 		  $(LIBDIR)$(SRCDIR)ft_strncat.c \
@@ -82,6 +86,7 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_strncpy.c \
 		  $(LIBDIR)$(SRCDIR)ft_strnequ.c \
 		  $(LIBDIR)$(SRCDIR)ft_strnew.c \
+		  $(LIBDIR)$(SRCDIR)ft_wstrnew.c \
 		  $(LIBDIR)$(SRCDIR)ft_strnstr.c \
 		  $(LIBDIR)$(SRCDIR)ft_strrchr.c \
 		  $(LIBDIR)$(SRCDIR)ft_strsplit.c \
@@ -99,8 +104,6 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_lstipos.c \
 		  $(LIBDIR)$(SRCDIR)ft_dmod.c \
 		  $(LIBDIR)$(SRCDIR)ft_ldmod.c \
-		  $(LIBDIR)$(SRCDIR)ft_ld_ldiglen.c \
-		  $(LIBDIR)$(SRCDIR)ft_d_ldiglen.c \
 		  $(LIBDIR)$(SRCDIR)ft_ldfrexp.c \
 		  $(LIBDIR)$(SRCDIR)ft_dfrexp.c \
 		  $(LIBDIR)$(SRCDIR)ft_ldexp.c \
@@ -109,6 +112,7 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_isinf.c \
 		  $(LIBDIR)$(SRCDIR)ft_dclassify.c \
 		  $(LIBDIR)$(SRCDIR)ft_signbit.c \
+		  $(LIBDIR)$(SRCDIR)ft_dtoa.c \
 		  $(LIBDIR)$(SRCDIR)ft_ldtoa.c \
 		  $(LIBDIR)$(SRCDIR)ft_putwchar.c \
 		  $(LIBDIR)$(SRCDIR)ft_putwstr.c \
@@ -123,12 +127,11 @@ LIBOBJS = $(LIBSRCS:.c=.o)
 
 SRCS = #$(SRCDIR)ft_printf.c \
 #	   $(SRCDIR)ft_parse.c \
-#	   $(SRCDIR)ft_compid.c \
+#	   $(SRCDIR)ft_parseid.c \
 #	   $(SRCDIR)ft_isid.c \
 #	   $(SRCDIR)ft_idisnull.c \
-#	   $(SRCDIR)ft_lmisnull.c \
 #	   $(SRCDIR)ft_iscolor.c \
-#	   $(SRCDIR)ft_isflag.c \
+#	   $(SRCDIR)ft_lmprocess.c \
 #	   $(SRCDIR)ft_isfm.c \
 #	   $(SRCDIR)ft_newid.c \
 #	   $(SRCDIR)ft_getarg.c \
@@ -136,7 +139,20 @@ SRCS = #$(SRCDIR)ft_printf.c \
 #	   $(SRCDIR)ft_get2.c \
 #	   $(SRCDIR)ft_get3.c \
 #	   $(SRCDIR)ft_storetolist.c \
-#	   $(SRCDIR)ft_enqueueid.c
+#	   $(SRCDIR)ft_enqueueid.c \
+#	   $(SRCDIR)ft_color.c \
+#	   $(SRCDIR)ft_conv.c \
+#	   $(SRCDIR)ft_delid.c \
+#	   $(SRCDIR)ft_dies.c \
+#	   $(SRCDIR)ft_fm.c \
+#	   $(SRCDIR)ft_minus.c \
+#	   $(SRCDIR)ft_plus.c \
+#	   $(SRCDIR)ft_precprocess.c \
+#	   $(SRCDIR)ft_print.c \
+#	   $(SRCDIR)ft_signconv.c \
+#	   $(SRCDIR)ft_space.c \
+#	   $(SRCDIR)ft_widthprocess.c \
+#	   $(SRCDIR)ft_zero.c
 
 OBJS = $(SRCS:.c=.o)
 

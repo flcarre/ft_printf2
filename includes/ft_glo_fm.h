@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_width.c                                         :+:      :+:    :+:   */
+/*   ft_glo_fm.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/16 21:23:47 by flcarre          ###   ########.fr       */
+/*   Created: 2019/01/04 02:05:05 by flcarre           #+#    #+#             */
+/*   Updated: 2019/01/31 17:50:21 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_GLO_FM_H
+# define FT_GLO_FM_H
 
-void	ft_width(t_id *e)
+# include "ft_printf.h"
+
+typedef struct				s_fm
 {
-	char			*tmp;
-	char			*s;
-	unsigned long	i;
+	unsigned char			v;
+	void					(*f)(t_id *e);
+}							t_fm;
 
-	s = (void *)0;
-	tmp = e->s;
-	i = (unsigned long)e->w[0];
-	i -= (ft_strlen(tmp) > i) ? i : ft_strlen(tmp);
-	if (!i)
-		return ;
-	s = ft_strnew(i);
-	ft_memset((void *)s, (int)' ', i);
-	e->s = ft_strjoin(s, e->s);
-	ft_memdel(&tmp);
-	ft_memdel(&s);
-}
+ft_fm						glo_fm[] = {
+							{8, &ft_zero},
+							{16, &ft_dies},
+							{2, &ft_space},
+							{1, &ft_plus},
+							{4, &ft_minus}
+};
+
+#endif

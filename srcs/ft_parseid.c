@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_compid.c                                        :+:      :+:    :+:   */
+/*   ft_parseid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/07 20:20:40 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/31 21:47:58 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void		ft_prec(unsigned long *i, char *id, t_id *e, unsigned int pos)
 {
-	if (id[i[0]] != '.')
+	if (id[i[0]] != '.' && (e->p[2] = 1))
 		return ;
 	i[0]++;
 	if (id[i[0]] == '*')
@@ -60,7 +60,7 @@ static void		ft_width(unsigned long *i, char *id, t_id *e, unsigned int pos)
 
 static void		ft_pos(unsigned long *i, char *id, t_id *e, unsigned int pos)
 {
-	if (ft_atoui(id + i[0]))
+	if (id[i[0] + (unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$')
 	{
 		e->pos = (id[i[0] + \
 			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
@@ -73,7 +73,7 @@ static void		ft_pos(unsigned long *i, char *id, t_id *e, unsigned int pos)
 		e->pos = pos;
 }
 
-unsigned int	ft_compid(char *id, t_id **list, unsigned long *i)
+unsigned long	ft_compid(char *id, t_id **list, unsigned long *i)
 {
 	static unsigned int	pos = 0;
 	t_id				*e;
@@ -82,7 +82,8 @@ unsigned int	ft_compid(char *id, t_id **list, unsigned long *i)
 		return (1);
 	ft_enqueueid(list, e);
 	i[0]++;
-	(ft_isid(id[i[0]]) == 5) ? ft_iscolor(i, id, e) : 0;
+	(ft_isid(id[i[0]]) == 5) ? ft_iscolor(i, id, e) : \
+	(e->id[0] = (ft_isid(id[i[0]]) == 4 && (i[1] = ++i[0])) ? '%' : e->id[0]);
 	if (e->id[0])
 		return (0);
 	pos++;
@@ -94,7 +95,7 @@ unsigned int	ft_compid(char *id, t_id **list, unsigned long *i)
 	}
 	ft_width(i, id, e, pos);
 	ft_prec(i, id, e, pos);
-	ft_isflag(id + i[0], e->lm, i);
+	ft_lmprocess(id + i[0], e->lm, i);
 	e->id[0] = (ft_isid(id[i[0]])) ? id[i[0]] : '\0';
 	i[0] += (ft_isid(id[i[0]])) ? 1 : 0;
 	i[1] = i[0];

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isflag.c                                        :+:      :+:    :+:   */
+/*   ft_lmprocess.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 14:54:17 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/03 23:00:44 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/30 21:26:25 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_isflag(char *f, char *lm, unsigned long *i)
+void	ft_lmprocess(char *f, char *lm, unsigned long *i)
 {
 	unsigned long	n;
 

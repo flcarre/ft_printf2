@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/16 21:40:46 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/01/31 22:51:39 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_dies(t_id *e)
 {
-	char *tmp;
+	char	*tmp;
 
 	tmp = e->s;
 	if (id[0] == 'o')
@@ -22,7 +22,7 @@ void	ft_dies(t_id *e)
 		e->s = ft_strjoin("0", e->s);
 		ft_memdel(&tmp);
 	}
-	if (id[0] == 'x')
+	if (id[0] == 'x' || id[0] == 'p')
 	{
 		e->s = ft_strjoin("0x", e->s);
 		ft_memdel(&tmp);
@@ -32,9 +32,9 @@ void	ft_dies(t_id *e)
 		e->s = ft_strjoin("0X", e->s);
 		ft_memdel(&tmp);
 	}
-	if ((id[0] == 'e' || id[0] == 'f' || id[0] == 'g') && !e->p[0])
+	/*if ((id[0] == 'e' || id[0] == 'f' || id[0] == 'g') && !e->p[0])
 	{
 		e->s = ft_strjoin(e->s, '.');
 		ft_memdel(&tmp);
-	}
+	}*/
 }

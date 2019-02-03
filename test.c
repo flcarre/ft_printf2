@@ -170,10 +170,10 @@ int main(int argc, char const *argv[]) {
 		printf("%s\n", "inf");
 	*/
 	char	*s;
-	s = ft_ldtoa(-0.1L);
+	s = ft_dtoa(-0.1);
 	if (s)
 		printf("%s\n", s);
-	printf("\n%.100Lf\n", -0.1L);
+	printf("\n%.100f\n", -0.1);
 	ft_memdel((void *)&s);
 	/*
 	s = ft_ldtoa(uld.ld);
@@ -233,5 +233,12 @@ int main(int argc, char const *argv[]) {
 	} while (y);
 	printf("%f\n", 1e63);
 	*/
+	printf("%1$0*2$.*3$f\n", -42.1, 50, -40);
+	printf("%050.40f\n", 42.1);
+	printf("%#050.1g\n", -42.1);
+	printf("%050.40g\n", 42.1);
+	printf("%#.0e\n", -42.1);
+	printf("%#.0e\n", 42.1);
+	printf("%-+3s\n", "ok");
 	return 0;
 }

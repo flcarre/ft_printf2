@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print.c                                         :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/09 11:21:37 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/31 22:11:30 by lutsiara         ###   ########.fr       */
+/*   Created: 2018/11/08 11:33:53 by lutsiara          #+#    #+#             */
+/*   Updated: 2019/02/03 15:58:44 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	ft_print(t_id *e, t_list *l)
+unsigned long	ft_wstrlen(const int *s)
 {
-	while(t->content || e->s)
-	{
-		write(1, t->content, t->content_size - 1);
-		write(1, e->s, ft_strlen(e->s));
-		t = t->next;
-		e = e->next;
-	}
+	unsigned long	len;
+
+	len = 0;
+	while (*(s + len))
+		len++;
+	return (len);
 }

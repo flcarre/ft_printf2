@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/07 20:22:59 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/01/30 22:10:47 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,29 @@
 
 t_id		*ft_parse(char *format, t_list **s, va_list *args)
 {
-	t_id			*list;
-	t_id			*l;
-	unsigned long	i[2];
-	unsigned int	r;
+	t_id			*list[2];
+	unsigned long	i[3];
 
-	(void)args;
 	i[0] = 0;
 	i[1] = 0;
-	r = 0;
-	list = (void *)0;
+	i[2] = 0;
+	list[0] = (void *)0;
 	while (format[i[0]])
 	{
 		(format[i[0]] == '%') ? ft_storetolist(format, i, s) : 0;
-		(format[i[0]] == '%') ? (r = ft_compid(format, &list, i)) : i[0]++;
-		if (ft_idisnull(list) || ft_lmisnull(list) || r)
+		(format[i[0]] == '%') ? (i[2] = ft_parseid(format, &list, i)) : i[0]++;
+		if (i[2] || ft_idisnull(list[0]))
 		{
-			ft_delid(&list);
+			ft_delid(&list[0]);
 			ft_lstdel(s, &ft_delcontent);
 			return ((void *)0);
 		}
 	}
-	l = list;
-	while (l)
+	list[1] = list[0];
+	while (list[1])
 	{
-		ft_getarg(args, l);
-		l = l->next;
+		ft_getarg(args, list[1]);
+		list[1] = list[1]->next;
 	}
-	/*
-	t_list	*l;
-	t_id 	*m;
-	l = *str;
-	m = list;
-	while (l)
-	{
-		printf("%s\n", l->content);
-		printf("pos = %d\nfm = %d\nw0 = %d\nw1 = %d\np0 = %d\np1 = %d\nlm = %s\nid = %s\n\n\n", m->pos, m->fm, m->w[0], m->w[1], m->p[0], m->p[1], m->lm, m->id);
-		l = l->next;
-		m = m->next;
-	}*/
-	return (list);
+	return (list[0]);
 }

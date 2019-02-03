@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:44:47 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/24 01:03:41 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/03 17:06:03 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ long double			ft_ldfrexp(long double x, int *p);
 double				ft_dexp(double x, int e);
 long double			ft_ldexp(long double x, int e);
 char				*ft_ldtoa(long double x);
+char				*ft_dtoa(double x);
 unsigned long		ft_abs(long x);
 double				ft_dabs(double x);
 long double			ft_ldabs(long double x);
 long				ft_pow(long x, unsigned int n);
 void				*ft_memset(void *b, int c, unsigned long len);
+void				*ft_wmemset(void *b, int c, unsigned long len);
 void				ft_bzero(void *s, unsigned long n);
 void				*ft_memcpy(void *dst, const void *src, unsigned long n);
 void				*ft_memccpy(void *dst, const void *src, int c, \
@@ -54,10 +56,13 @@ int					ft_memcmp(const void *s1, const void *s2, unsigned long n);
 void				*ft_memalloc(unsigned long size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(unsigned long size);
+int					*ft_wstrnew(unsigned long size);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 unsigned long		ft_strlen(const char *s);
+unsigned long		ft_wstrlen(const int *s);
 char				*ft_strdup(const char *s1);
+int					*ft_wstrdup(const int *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, unsigned long len);
 char				*ft_strcat(char *s1, const char *s2);
@@ -91,6 +96,7 @@ int					ft_strnequ(char const *s1, char const *s2, unsigned long n);
 char				*ft_strsub(char const *s, unsigned int start, \
 					unsigned long len);
 char				*ft_strjoin(char const *s1, char const *s2);
+int					*ft_wstrjoin(int const *s1, int const *s2);
 int					ft_iswhitespace(int c);
 char				*ft_strtrim(char const *s);
 unsigned long		ft_countword(char const *s, char c);
