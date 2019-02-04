@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 18:32:13 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/03 17:54:51 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/04 21:07:25 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ static void	ft_conv_cs(t_id *e)
 	wchar_t		w[2];
 	char		c[2];
 
+	if (e->id[0] != 'c' && e->id[0] != 's')
+		e->infnan = (!ft_strcmp("inf", e->s) || !ft_strcmp("-inf", e->s) || \
+		!ft_strcmp("nan", e->s) || !ft_strcmp("-nan", e->s)) ? 1 : 0;
 	if (e->id[0] != 'c' && e->id[0] != 's')
 		return ;
 	ft_bzero((void *)c, 2);

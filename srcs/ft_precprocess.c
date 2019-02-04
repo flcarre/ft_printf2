@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 11:32:41 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/04 20:30:51 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/04 21:10:19 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void		ft_precprocess(t_id *e)
 	unsigned int	i;
 
 	i = 0;
-	if (e->id[0] == 'c' || e->id[0] == 'p')
+	if (e->id[0] == 'c' || e->id[0] == 'p' || e->infnan)
 		return ;
 	if (ft_isid(e->id[0]) == 2)
 		ft_precdiouxx(e);

@@ -246,11 +246,11 @@ int main(int argc, char const *argv[]) {
 	printf("%.100e\n", 89.999);
 	printf("%.e\n", 89.999);
 	printf("%.100f\n", 89.999);
-	printf("%010.2e\n", 0.0/1.0);
-	printf("%010.2f\n", 0.0/1.0);
-	printf("%010.2g\n", 0.0/1.0);
-	printf("%e\n", 0.0/1.0);
-	printf("%f\n", 0.0/1.0);
-	printf("%g\n", 0.0/1.0);
+	printf("%- 10.20e\n", 1.0/0.0);
+	printf("%- 10.20f\n", 1.0/0.0);
+	printf("%- 10.20g\n", 1.0/0.0);
+	printf("%e\n", 1.0/0.0);
+	printf("%f\n", 1.0/0.0);
+	printf("%g\n", 1.0/0.0);
 	return 0;
 }

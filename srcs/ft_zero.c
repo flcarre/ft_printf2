@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/03 17:19:53 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/04 21:09:06 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_zero(t_id *e)
 	unsigned long	i;
 
 	if ((e->fm & 4) == 4 || e->id[0] == 'c' || e->id[0] == 's' || \
-	(ft_isid(id[0]) == 2 && e->p[0]))
+	(ft_isid(id[0]) == 2 && e->p[0]) || e->infnan)
 		return ;
 	s = (void *)0;
 	tmp = e->s;
