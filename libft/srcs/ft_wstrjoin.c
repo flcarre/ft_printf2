@@ -6,13 +6,13 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 15:02:30 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/03 16:05:53 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/04 20:36:42 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		*ft_strjoin(int const *s1, int const *s2)
+int		*ft_wstrjoin(int const *s1, int const *s2)
 {
 	int				*tmp;
 	unsigned long	i;

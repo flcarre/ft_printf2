@@ -169,12 +169,14 @@ int main(int argc, char const *argv[]) {
 	if (!(uld.ld != uld.ld) && (uld.ld - uld.ld != uld.ld - uld.ld))
 		printf("%s\n", "inf");
 	*/
-	char	*s;
-	s = ft_dtoa(-0.1);
-	if (s)
-		printf("%s\n", s);
-	printf("\n%.100f\n", -0.1);
-	ft_memdel((void *)&s);
+	/*
+	 char	*s;
+	 s = ft_dtoa(-0.1);
+	 if (s)
+		 printf("%s\n", s);
+	 printf("\n%.100f\n", -0.1);
+	 ft_memdel((void *)&s);
+	 */
 	/*
 	s = ft_ldtoa(uld.ld);
 
@@ -236,9 +238,19 @@ int main(int argc, char const *argv[]) {
 	printf("%1$0*2$.*3$f\n", -42.1, 50, -40);
 	printf("%050.40f\n", 42.1);
 	printf("%#050.1g\n", -42.1);
-	printf("%050.40g\n", 42.1);
+	printf("%050.20g\n", 42.1);
 	printf("%#.0e\n", -42.1);
 	printf("%#.0e\n", 42.1);
-	printf("%-+3s\n", "ok");
+	printf("%2.5d\n", -42);
+	printf("%.2f\n", 99.999);
+	printf("%.100e\n", 89.999);
+	printf("%.e\n", 89.999);
+	printf("%.100f\n", 89.999);
+	printf("%010.2e\n", 0.0/1.0);
+	printf("%010.2f\n", 0.0/1.0);
+	printf("%010.2g\n", 0.0/1.0);
+	printf("%e\n", 0.0/1.0);
+	printf("%f\n", 0.0/1.0);
+	printf("%g\n", 0.0/1.0);
 	return 0;
 }

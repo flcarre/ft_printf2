@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:44:47 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/03 17:06:03 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/04 19:44:11 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,5 +135,6 @@ void				ft_lstenqueue(t_list **list, t_list *elem);
 t_list				*ft_lstdupone(t_list *elem);
 t_list				*ft_lstdup(t_list *list);
 t_list				*ft_lstipos(t_list *list, unsigned long i);
+void				ft_floatstrround(char **str, unsigned int n);
 
 #endif

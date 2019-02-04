@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/02/03 17:06:28 by lutsiara         ###   ########.fr        #
+#    Updated: 2019/02/04 19:44:37 by flcarre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,6 +120,7 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_strstore.c \
 		  $(LIBDIR)$(SRCDIR)ft_ull.c \
 		  $(LIBDIR)$(SRCDIR)ft_trim.c \
+		  $(LIBDIR)$(SRCDIR)ft_floatstrround.c \
 		  $(LIBDIR)$(SRCDIR)ft_udigitlen.c \
 		  $(LIBDIR)$(SRCDIR)get_next_line.c
 
