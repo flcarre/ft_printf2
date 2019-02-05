@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/03 18:46:54 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/05 17:23:43 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	ft_plus(t_id *e)
 	{
 		tmp = e->s;
 		e->s = ft_strjoin("+", e->s);
-		ft_memdel(&tmp);
+		ft_memdel((void **)&tmp);
 	}
 	else if (e->sign == '-' && e->s[0] != '-')
 	{
 		tmp = e->s;
 		e->s = ft_strjoin("-", e->s);
-		ft_memdel(&tmp);
+		ft_memdel((void **)&tmp);
 	}
 }

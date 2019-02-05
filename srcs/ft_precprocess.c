@@ -6,11 +6,16 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 11:32:41 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 12:56:48 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/05 17:23:19 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void	ft_addprec(t_id *e)
+{
+
+}
 
 static void	ft_precf(t_id *e)
 {
@@ -26,16 +31,16 @@ static void	ft_precf(t_id *e)
 	j = e->p[0];
 	if (!j && (e->fm & 16) != 16)
 		e->s[i] = '\0';
-	while (e->s[i] && ((j >= 1) ? j-- : j))
-		i++;
+	while (e->s[++i] && ((j >= 1) ? j-- : j))
+		;
 	if (j)
 	{
 		tmp = e->s;
 		s = ft_strnew(j);
 		ft_memset((void *)s, (int)'0', (unsigned long)j);
 		e->s = ft_strjoin(e->s, s);
-		ft_memdel(&tmp);
-		ft_memdel(&s);
+		ft_memdel((void **)&tmp);
+		ft_memdel((void **)&s);
 	}
 	else if (e->s[i])
 		e->s[i + 1] = '\0';
@@ -56,8 +61,8 @@ static void	ft_precdiouxx(t_id *e)
 	s = ft_strnew(i);
 	ft_memset((void *)s, (int)'0', i);
 	e->s = ft_strjoin(s, e->s);
-	ft_memdel(&tmp);
-	ft_memdel(&s);
+	ft_memdel((void **)&tmp);
+	ft_memdel((void **)&s);
 }
 
 void		ft_precprocess(t_id *e)

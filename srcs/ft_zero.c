@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/04 21:09:06 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/05 17:23:17 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void	ft_zero(t_id *e)
 	s = ft_strnew(i);
 	ft_memset((void *)s, (int)'0', i);
 	e->s = ft_strjoin(s, e->s);
-	ft_memdel(&tmp);
-	ft_memdel(&s);
+	ft_memdel((void **)&tmp);
+	ft_memdel((void **)&s);
 }

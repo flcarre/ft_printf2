@@ -261,6 +261,12 @@ int main(int argc, char const *argv[]) {
 	printf("%.2g\n", 1.0);
 	printf("%.2g\n", 0.0);
 	printf("%#.2g\n", 0.0);
+	printf("%.0g\n", 0.000009);
+	printf("%.0g\n", 0.00009);
+	printf("%.0g\n", 0.0009);
+	printf("%.0g\n", 0.009);
+	printf("%.0g\n", 0.09);
+	printf("%.0g\n", 0.9);
 	printf("%.2g\n", 42.6);
 	printf("%.2g\n", 89.9999);
 	printf("%g\n", 89.99999);
@@ -275,6 +281,9 @@ int main(int argc, char const *argv[]) {
 	printf("%.2e\n", 42.1);
 	printf("%050.20e\n", 42.1);
 	printf("%.2e\n", 1.0);
+	printf("%.0e\n", 1.0);
+	printf("%#.0e\n", 1.0);
+	printf("%#.0e\n", 2455431.0);
 	printf("%.2e\n", 0.0);
 	printf("%#.2e\n", 0.0);
 	printf("%.2e\n", 42.6);
@@ -285,6 +294,7 @@ int main(int argc, char const *argv[]) {
 	printf("%e\n", 99.9999999);
 	printf("%.4e\n", 94459539.99999);
 	printf("%.4e\n", 91999539.99999);
+	printf("%.11Le\n", 44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444.99999L);
 
 	return 0;
 }
