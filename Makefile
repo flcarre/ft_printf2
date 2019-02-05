@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/02/04 19:44:37 by flcarre          ###   ########.fr        #
+#    Updated: 2019/02/05 18:09:41 by lutsiara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,6 +149,8 @@ SRCS = #$(SRCDIR)ft_printf.c \
 #	   $(SRCDIR)ft_minus.c \
 #	   $(SRCDIR)ft_plus.c \
 #	   $(SRCDIR)ft_precprocess.c \
+#	   $(SRCDIR)ft_eprocess.c \
+#	   $(SRCDIR)ft_erounding.c \
 #	   $(SRCDIR)ft_print.c \
 #	   $(SRCDIR)ft_signconv.c \
 #	   $(SRCDIR)ft_space.c \

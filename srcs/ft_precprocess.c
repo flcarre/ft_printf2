@@ -6,16 +6,11 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 11:32:41 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 17:23:19 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/05 18:05:53 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static void	ft_addprec(t_id *e)
-{
-
-}
 
 static void	ft_precf(t_id *e)
 {
@@ -74,11 +69,6 @@ void		ft_precprocess(t_id *e)
 		return ;
 	if (ft_isid(e->id[0]) == 2)
 		ft_precdiouxx(e);
-	if (e->id[0] == 'g')
-	{
-		ft_grounding(&(e->s), e->p[0]);
-		ft_gprocess(e);
-	}
 	if (e->id[0] == 'f')
 		ft_precf(e);
 	if (e->id[0] == 'e')

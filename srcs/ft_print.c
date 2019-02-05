@@ -6,13 +6,13 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 11:21:37 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/31 22:11:30 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/05 18:19:30 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print(t_id *e, t_list *l)
+void	ft_print(t_id *e, t_list *t)
 {
 	while(t->content || e->s)
 	{

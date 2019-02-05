@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 18:32:13 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/04 21:07:25 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/05 18:02:12 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,9 @@ void		ft_conv(t_id *e)
 	ft_ldtoa((long double)*(e->a)) : 0;
 	(!ft_strcmp(e->id, "e") && !ft_strcmp(e->lm, "L")) ? (e->s = \
 	ft_ldtoa((long double)*(e->a)) : 0;
-	(!ft_strcmp(e->id, "g") && !ft_strcmp(e->lm, "L")) ? (e->s = \
-	ft_ldtoa((long double)*(e->a)) : 0;
 	(!ft_strcmp(e->id, "f") && (!ft_strcmp(e->lm, "") || \
 	!ft_strcmp(e->lm, "l"))) ? (e->s = ft_dtoa((double)*(e->a)) : 0;
 	(!ft_strcmp(e->id, "e") && (!ft_strcmp(e->lm, "") || \
-	!ft_strcmp(e->lm, "l"))) ? (e->s = ft_dtoa((double)*(e->a)) : 0;
-	(!ft_strcmp(e->id, "g") && (!ft_strcmp(e->lm, "") || \
 	!ft_strcmp(e->lm, "l"))) ? (e->s = ft_dtoa((double)*(e->a)) : 0;
 	ft_conv_cs(e);
 }

@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 00:22:45 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/02 15:59:45 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/05 18:12:09 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ static void	ft_get_wp(va_list *arg, t_id *e)
 		ft_getx(&tmp, e, 1);
 		va_end(tmp);
 	}
-	else if (!(e->p[0]) && (!ft_strcmp(e->id, "f") || \
-	!ft_strcmp(e->id, "e") || !ft_strcmp(e->id, "g")))
+	else if (!(e->p[0]) && (!ft_strcmp(e->id, "f") || !ft_strcmp(e->id, "e")))
 		e->p[0] = (e->p[2]) ? 6 : e->p[0];
 }
 

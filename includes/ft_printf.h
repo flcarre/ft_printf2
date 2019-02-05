@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/04 21:03:23 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/05 18:14:25 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include "../libft/includes/libft.h"
-# include "../libft/includes/get_next_line.h"
 # include <stdarg.h>
 # include <wchar.h>
 
@@ -89,6 +88,8 @@ void						ft_get14(va_list *arg, unsigned int i, t_var *u);
 void						ft_conv(t_id *e);
 void						ft_color(t_id *e);
 void						ft_precprocess(t_id *e);
+void						ft_eprocess(t_id *e);
+void						ft_erounding(char **str, unsigned int n);
 void						ft_fm(t_id *e);
 void						ft_zero(t_id *e);
 void						ft_dies(t_id *e);

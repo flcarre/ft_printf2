@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 17:45:01 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/02 17:41:19 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/05 18:04:55 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ int		ft_idisnull(t_id *list)
 	if ((list->id[0] == '%' && list->pos) || (list->id[0] == '{' && list->pos))
 		return (1);
 	if ((ft_strcmp("l", list->lm) && ft_strcmp("", list->lm) && \
-	ft_strcmp("L", list->lm)) && (list->id[0] == 'e' || list->id[0] == 'f' || \
-	list->id[0] == 'g'))
+	ft_strcmp("L", list->lm)) && (list->id[0] == 'e' || list->id[0] == 'f'))
 			return (1);
 	if ((ft_strcmp("l", list->lm) && ft_strcmp("", list->lm)) && \
 	(list->id[0] == 'c' || list->id[0] == 's'))
