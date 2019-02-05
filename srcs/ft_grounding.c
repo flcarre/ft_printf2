@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_floatstrround.c                                 :+:      :+:    :+:   */
+/*   ft_grounding.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/04 18:41:20 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 13:03:44 by flcarre          ###   ########.fr       */
+/*   Created: 2019/02/05 12:29:52 by flcarre           #+#    #+#             */
+/*   Updated: 2019/02/05 12:36:08 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_floatstrround(char **str, unsigned int n)
+void	ft_grounding(char **str, unsigned int n)
 {
 	unsigned int	i;
 	char			*tmp;
 
 	i = 0;
-	while ((*str)[i] && (*str)[i] != '.')
-		i++;
-	i++;
 	while (n-- && (*str)[i])
-		i++;
+		i = ((*str)[i + 1] == '.') ? i + 2 : i + 1;
 	if ((*str)[i] && (*str)[i + 1] >= '5')
 	{
 		while (i > 0 && (*str)[i] == '9')

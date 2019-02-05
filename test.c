@@ -235,6 +235,7 @@ int main(int argc, char const *argv[]) {
 	} while (y);
 	printf("%f\n", 1e63);
 	*/
+	/*
 	printf("%1$0*2$.*3$f\n", -42.1, 50, -40);
 	printf("%050.40f\n", 42.1);
 	printf("%#050.1g\n", -42.1);
@@ -252,5 +253,38 @@ int main(int argc, char const *argv[]) {
 	printf("%e\n", 1.0/0.0);
 	printf("%f\n", 1.0/0.0);
 	printf("%g\n", 1.0/0.0);
+*/
+	printf("g exemple\n");
+	printf("%1$0*2$.*3$g\n", -42.1, 50, -40);
+	printf("%.2g\n", 42.1);
+	printf("%050.20g\n", 42.1);
+	printf("%.2g\n", 1.0);
+	printf("%.2g\n", 0.0);
+	printf("%#.2g\n", 0.0);
+	printf("%.2g\n", 42.6);
+	printf("%.2g\n", 89.9999);
+	printf("%g\n", 89.99999);
+	printf("%.2g\n", 99.9999);
+	printf("%g\n", 99.99999);
+	printf("%g\n", 99.9999999);
+	printf("%.4g\n", 94459539.99999);
+	printf("%.4g\n", 91999539.99999);
+	printf("\n");
+	printf("e exemple\n");
+	printf("%1$0*2$.*3$e\n", -42.1, 50, -40);
+	printf("%.2e\n", 42.1);
+	printf("%050.20e\n", 42.1);
+	printf("%.2e\n", 1.0);
+	printf("%.2e\n", 0.0);
+	printf("%#.2e\n", 0.0);
+	printf("%.2e\n", 42.6);
+	printf("%.2e\n", 89.9999);
+	printf("%e\n", 89.99999);
+	printf("%.2e\n", 99.9999);
+	printf("%e\n", 99.99999);
+	printf("%e\n", 99.9999999);
+	printf("%.4e\n", 94459539.99999);
+	printf("%.4e\n", 91999539.99999);
+
 	return 0;
 }
