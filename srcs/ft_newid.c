@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 16:12:52 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/04 21:03:39 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/05 20:49:22 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ t_id		*ft_newid(void)
 	new->infnan = 0;
 	ft_bzero((void *)new->lm, 3);
 	ft_bzero((void *)new->id, 10);
+	new->ws = (void *)0;
+	new->s = (void *)0;
 	new->arg.i = 0;
 	new->sign = '\0';
 	new->next = (void *)0;

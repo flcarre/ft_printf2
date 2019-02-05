@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/05 18:14:25 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/05 21:01:30 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,17 +87,17 @@ void						ft_get13(va_list *arg, unsigned int i, t_var *u);
 void						ft_get14(va_list *arg, unsigned int i, t_var *u);
 void						ft_conv(t_id *e);
 void						ft_color(t_id *e);
-void						ft_precprocess(t_id *e);
+int							ft_precprocess(t_id *e);
 void						ft_eprocess(t_id *e);
 void						ft_erounding(char **str, unsigned int n);
-void						ft_fm(t_id *e);
+int							ft_fm(t_id *e);
 void						ft_zero(t_id *e);
 void						ft_dies(t_id *e);
 void						ft_space(t_id *e);
 void						ft_plus(t_id *e);
 void						ft_minus(t_id *e);
 int							ft_signconv(char c);
-void						ft_widthprocess(t_id *e);
-void						ft_print(t_id *e, t_list *l);
+int							ft_widthprocess(t_id *e);
+void						ft_print(t_id *e, t_list *l, int *r);
 
 #endif

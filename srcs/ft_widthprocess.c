@@ -6,13 +6,13 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 17:23:15 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/05 21:38:35 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_w_widthprocess(t_id *e)
+static int	ft_w_widthprocess(t_id *e)
 {
 	wchar_t			*tmp;
 	wchar_t			*s;
@@ -29,19 +29,17 @@ static void	ft_w_widthprocess(t_id *e)
 	e->ws = ft_wstrjoin(s, tmp);
 	ft_memdel((void **)&tmp);
 	ft_memdel((void **)&s);
+	return ((e->ws) ? 0 : -1);
 }
 
-void		ft_widthprocess(t_id *e)
+int			ft_widthprocess(t_id *e)
 {
 	char			*tmp;
 	char			*s;
 	unsigned long	i;
 
-	if (!ft_strcmp("l", e->lm) && (e->id[0] == 's' || e->id[0] == 'c'))
-	{
-		ft_w_widthprocess(e);
-		return ;
-	}
+	if (e->lm[0] == 'l' && (e->id[0] == 's' || e->id[0] == 'c'))
+		return (ft_w_widthprocess(e));
 	s = (void *)0;
 	tmp = e->s;
 	i = (unsigned long)e->w[0];
@@ -53,4 +51,5 @@ void		ft_widthprocess(t_id *e)
 	e->s = ft_strjoin(s, e->s);
 	ft_memdel((void **)&tmp);
 	ft_memdel((void **)&s);
+	return ((e->s) ? 0 : -1);
 }

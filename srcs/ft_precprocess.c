@@ -6,11 +6,32 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 11:32:41 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 18:05:53 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/05 21:15:53 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void ft_toggleminus(t_id *e)
+{
+	char			*tmp;
+
+	if (e->s[0] == '-' && e->id[0] != 's')
+	{
+		tmp = e->s;
+		e->sign = '-';
+		e->w[0] -= (e->w[0] > 1) ? 1 : e->w[0];
+		e->s = ft_strsub(tmp, 1, ft_strlen(tmp) - 1);
+		ft_memdel((void **)&tmp);
+	}
+	else if (e->sign == '-')
+	{
+		tmp = e->s;
+		e->s = ft_strjoin("-", tmp);
+		ft_memdel((void **)&tmp);
+		e->sign = '\0';
+	}
+}
 
 static void	ft_precf(t_id *e)
 {
@@ -60,13 +81,33 @@ static void	ft_precdiouxx(t_id *e)
 	ft_memdel((void **)&s);
 }
 
-void		ft_precprocess(t_id *e)
+static void	ft_precs(t_id *e)
+{
+	unsigned int	i;
+
+	i = 0;
+	if (e->lm[0] == 'l')
+	{
+		while (e->ws[i] && i <= e->p[0])
+			i++;
+		e->ws[i] = L'\0';
+	}
+	else
+	{
+		while (e->s[i] && i <= e->p[0])
+			i++;
+		e->s[i] = '\0';
+	}
+}
+
+int			ft_precprocess(t_id *e)
 {
 	unsigned int	i;
 
 	i = 0;
 	if (e->id[0] == 'c' || e->id[0] == 'p' || e->infnan)
 		return ;
+	ft_toggleminus(e);
 	if (ft_isid(e->id[0]) == 2)
 		ft_precdiouxx(e);
 	if (e->id[0] == 'f')
@@ -77,9 +118,9 @@ void		ft_precprocess(t_id *e)
 		ft_eprocess(e);
 	}
 	if (e->id[0] == 's')
-	{
-		while (e->s[i] && i <= e->p[0])
-			i++;
-		e->s[i] = '\0';
-	}
+		ft_precs(e);
+	ft_toggleminus(e);
+	if (e->id[0] == 's' && e->lm[0] == 'l')
+		return ((e->ws) ? 0 : -1);
+	return ((e->s) ? 0 : -1);
 }
