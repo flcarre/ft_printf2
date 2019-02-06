@@ -300,8 +300,11 @@ int main(int argc, char const *argv[]) {
 	printf("%.4e\n", 91999539.99999);
 	printf("%.11Le\n", 44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444.99999L);
 */
-	ft_printf("ab%dcd");
-	ft_printf("%s", "abcd");
+	// ft_printf("abcd");
+	// ft_printf("%d", 3);
+	// ft_printf("%d\n", 3);
+	ft_printf("abcd%dadsaaezx%ddfhbds", 3, 4);
+	// ft_printf("%s\n", "abcd");
 
 	return 0;
 }

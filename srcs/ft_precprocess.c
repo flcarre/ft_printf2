@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 11:32:41 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 14:12:25 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 15:25:01 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,31 @@ static int	ft_toggleminus(t_id *e)
 {
 	char			*tmp;
 
+	// printf("2.1\n");
+	// printf("%s\n", e->s);
 	if (e->s[0] == '-' && e->id[0] != 's')
 	{
+		// printf("2.2\n");
 		tmp = e->s;
 		e->sign = '-';
+		// printf("2.3\n");
 		e->s = ft_strsub(tmp, 1, ft_strlen(tmp) - 1);
+		// printf("2.4\n");
 		ft_memdel((void **)&tmp);
+		// printf("2.5\n");
 	}
 	else if (e->sign == '-')
 	{
+		// printf("2.6\n");
 		tmp = e->s;
+		// printf("2.7\n");
 		e->s = ft_strjoin("-", tmp);
+		// printf("2.8\n");
 		ft_memdel((void **)&tmp);
+		// printf("2.9\n");
 		e->sign = '\0';
 	}
+	// printf("2.10\n");
 	return ((e->s) ? 0 : 1);
 }
 
@@ -102,26 +113,35 @@ static void	ft_precs(t_id *e)
 
 int			ft_precprocess(t_id *e)
 {
+	// printf("1.1\n");
 	unsigned int	i;
 
 	i = 0;
 	if (e->id[0] == 'c' || e->id[0] == 'p' || e->infnan)
 		return (0);
+	// printf("1.1.1\n");
 	if (ft_toggleminus(e))
 		return (-1);
+	// printf("1.2\n");
 	if (ft_isid(e->id[0]) == 2)
 		ft_precdiouxx(e);
+	// printf("1.3\n");
 	if (e->id[0] == 'f')
 		ft_precf(e);
+	// printf("1.4\n");
 	if (e->id[0] == 'e')
 	{
 		ft_erounding(&(e->s), e->p[0]);
 		ft_eprocess(e);
 	}
+	// printf("1.5\n");
 	if (e->id[0] == 's')
 		ft_precs(e);
+	// printf("1.6\n");
 	ft_toggleminus(e);
+	// printf("1.7\n");
 	if (e->id[0] == 's' && e->lm[0] == 'l')
 		return ((e->ws) ? 0 : -1);
+	// printf("1.8\n");
 	return ((e->s) ? 0 : -1);
 }
