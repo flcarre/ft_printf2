@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 02:05:05 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 18:03:54 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 13:44:02 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef struct				s_f
 {
-		void				(*f)(va_list *, unsigned int, t_var *);
+		void				(*f)(va_list *, unsigned int, t_var *, t_id *);
 		char				lm[3];
 		char				id[10];
 }							t_f;

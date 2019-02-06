@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 02:05:05 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/31 17:50:21 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 14:02:36 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct				s_fm
 	void					(*f)(t_id *e);
 }							t_fm;
 
-ft_fm						glo_fm[] = {
+t_fm						glo_fm[] = {
 							{8, &ft_zero},
 							{16, &ft_dies},
 							{2, &ft_space},

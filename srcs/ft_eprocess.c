@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 13:40:14 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 17:39:32 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/06 14:14:00 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static void	ft_addzero(t_id *e, unsigned long x)
 		s = ft_strnew((unsigned long)e->p[0] - x);
 		ft_memset((void *)s, (int)'0', (unsigned long)e->p[0] - x);
 		e->s = ft_strjoin(e->s, s);
-		ft_memdel(&tmp);
-		ft_memdel(&s);
+		ft_memdel((void **)&tmp);
+		ft_memdel((void **)&s);
 	}
 	e->s[e->p[0] + 2] = '\0';
 }

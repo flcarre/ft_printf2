@@ -4,6 +4,9 @@
 #include "includes/ft_printf.h"
 #include "libft/includes/ft_ieee.h"
 #include <math.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <strings.h>
 /*
 static int f(int i, ...)
 {
@@ -254,6 +257,7 @@ int main(int argc, char const *argv[]) {
 	printf("%f\n", 1.0/0.0);
 	printf("%g\n", 1.0/0.0);
 */
+/*
 	printf("g exemple\n");
 	printf("%1$0*2$.*3$g\n", -42.1, 50, -40);
 	printf("%.2g\n", 42.1);
@@ -295,6 +299,9 @@ int main(int argc, char const *argv[]) {
 	printf("%.4e\n", 94459539.99999);
 	printf("%.4e\n", 91999539.99999);
 	printf("%.11Le\n", 44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444.99999L);
+*/
+	ft_printf("ab%dcd");
+	ft_printf("%s", "abcd");
 
 	return 0;
 }

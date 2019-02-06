@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 21:38:35 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 14:15:43 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_w_widthprocess(t_id *e)
 	i = (unsigned long)e->w[0];
 	i -= (ft_wstrlen(tmp) > i) ? i : ft_wstrlen(tmp);
 	if (!i)
-		return ;
+		return (0);
 	s = ft_wstrnew(i);
 	ft_wmemset((void *)s, (int)' ', i);
 	e->ws = ft_wstrjoin(s, tmp);
@@ -45,7 +45,7 @@ int			ft_widthprocess(t_id *e)
 	i = (unsigned long)e->w[0];
 	i -= (ft_strlen(tmp) > i) ? i : ft_strlen(tmp);
 	if (!i)
-		return ;
+		return (0);
 	s = ft_strnew(i);
 	ft_memset((void *)s, (int)' ', i);
 	e->s = ft_strjoin(s, e->s);

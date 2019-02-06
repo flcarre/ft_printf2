@@ -6,13 +6,13 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 11:32:41 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 21:15:53 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 14:12:25 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void ft_toggleminus(t_id *e)
+static int	ft_toggleminus(t_id *e)
 {
 	char			*tmp;
 
@@ -20,7 +20,6 @@ static void ft_toggleminus(t_id *e)
 	{
 		tmp = e->s;
 		e->sign = '-';
-		e->w[0] -= (e->w[0] > 1) ? 1 : e->w[0];
 		e->s = ft_strsub(tmp, 1, ft_strlen(tmp) - 1);
 		ft_memdel((void **)&tmp);
 	}
@@ -31,6 +30,7 @@ static void ft_toggleminus(t_id *e)
 		ft_memdel((void **)&tmp);
 		e->sign = '\0';
 	}
+	return ((e->s) ? 0 : 1);
 }
 
 static void	ft_precf(t_id *e)
@@ -105,9 +105,10 @@ int			ft_precprocess(t_id *e)
 	unsigned int	i;
 
 	i = 0;
-	if (e->id[0] == 'c' || e->id[0] == 'p' || e->infnan)
-		return ;
-	ft_toggleminus(e);
+	if (e->id[0] == 'c' || e->id[0] == 'p' || e->infnan)
+		return (0);
+	if (ft_toggleminus(e))
+		return (-1);
 	if (ft_isid(e->id[0]) == 2)
 		ft_precdiouxx(e);
 	if (e->id[0] == 'f')

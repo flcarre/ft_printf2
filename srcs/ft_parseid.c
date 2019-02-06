@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/31 21:47:58 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 14:24:37 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static void		ft_pos(unsigned long *i, char *id, t_id *e, unsigned int pos)
 		e->pos = pos;
 }
 
-unsigned long	ft_compid(char *id, t_id **list, unsigned long *i)
+unsigned long	ft_parseid(char *id, t_id **list, unsigned long *i)
 {
 	static unsigned int	pos = 0;
 	t_id				*e;

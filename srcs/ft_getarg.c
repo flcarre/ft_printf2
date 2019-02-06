@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 00:22:45 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 18:12:09 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 13:44:39 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,13 @@ void		ft_getarg(va_list *args, t_id *e)
 	{
 		if (!ft_strcmp(glo_get[i].lm, e->lm) && !ft_strcmp(glo_get[i].id, e->id))
 		{
-			glo_get[i].f(&tmp, e->pos, &(e->arg));
+			glo_get[i].f(&tmp, e->pos, &(e->arg), e);
 			va_end(tmp);
 			return ;
 		}
 	}
 	if (!ft_strcmp("", e->lm) && !ft_strcmp("p", e->id))
-		ft_get(&tmp, e->pos, &(e->arg));
+		ft_get(&tmp, e->pos, &(e->arg), e);
 	ft_get_wp(args, e);
 	va_end(tmp);
 }

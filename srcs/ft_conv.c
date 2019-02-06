@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 18:32:13 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/05 18:57:06 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 13:59:31 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ static void	ft_conv_cs(t_id *e)
 		return ;
 	ft_bzero((void *)c, 2);
 	ft_bzero((void *)w, sizeof(int) * 2);
-	w[0] = (lm[0] == 'l') && e->id[0] == 'c') ? e->arg.w : w[0];
-	c[0] = (e->lm[0] == '') && e->id[0] == 'c') ? e->arg.c : c[0];
-	e->ws = (lm[0] == 'l') && e->id[0] == 'c') ? ft_wstrdup(w) : 0;
-	e->ws = (lm[0] == 'l') && e->id[0] == 's') ? \
+	w[0] = (e->lm[0] == 'l' && e->id[0] == 'c') ? e->arg.w : w[0];
+	c[0] = (e->lm[0] == '\0' && e->id[0] == 'c') ? e->arg.c : c[0];
+	e->ws = (e->lm[0] == 'l' && e->id[0] == 'c') ? ft_wstrdup(w) : 0;
+	e->ws = (e->lm[0] == 'l' && e->id[0] == 's') ? \
 	ft_wstrdup(e->arg.wp) : e->ws;
-	e->s = (e->lm[0] == '') && e->id[0] == 'c') ? ft_strdup(c) : 0;
-	e->s = (e->lm[0] == '') && e->id[0] == 's') ? \
-	ft_wstrdup(e->arg.cp) : e->s;
+	e->s = (e->lm[0] == '\0' && e->id[0] == 'c') ? ft_strdup(c) : 0;
+	e->s = (e->lm[0] == '\0' && e->id[0] == 's') ? ft_strdup(e->arg.cp) : e->s;
 }
 
 void		ft_conv(t_id *e)
@@ -39,24 +38,24 @@ void		ft_conv(t_id *e)
 	(e->id[0] == '{') ? ft_color(e) : 0;
 	(e->id[0] == '%') ? (e->s = ft_strdup("%")) : 0;
 	(e->id[0] == 'd' || e->id[0] == 'i') ? \
-	(e->s = ft_lltoa((long long)*(e->a))) : 0;
+	(e->s = ft_lltoa(*((long long *)e->a))) : 0;
 	(e->id[0] == 'o') ? \
-	(e->s = ft_ulltoa_base((unsigned long long)*(e->a), "01234567")) : 0;
+	(e->s = ft_ulltoa_base(*((unsigned long long *)e->a), "01234567")) : 0;
 	(e->id[0] == 'u') ? \
-	(e->s = ft_ulltoa((unsigned long long)*(e->a))) : 0;
+	(e->s = ft_ulltoa(*((unsigned long long *)e->a))) : 0;
 	(e->id[0] == 'x') ? (e->s = \
-	ft_ulltoa_base((unsigned long long)*(e->a), "0123456789abcdef")) : 0;
+	ft_ulltoa_base(*((unsigned long long *)e->a), "0123456789abcdef")) : 0;
 	(e->id[0] == 'p') ? (e->s = \
 	ft_ulltoa_base((unsigned long long)e->a, "0123456789abcdef")) : 0;
 	(e->id[0] == 'X') ? (e->s = \
-	ft_ulltoa_base((unsigned long long)*(e->a), "0123456789ABCDEF")) : 0;
+	ft_ulltoa_base(*((unsigned long long *)e->a), "0123456789ABCDEF")) : 0;
 	(e->id[0] == 'f' && e->lm[0] == 'L') ? \
-	(e->s = ft_ldtoa((long double)*(e->a))) : 0;
+	(e->s = ft_ldtoa(*((long double *)e->a))) : 0;
 	(e->id[0] == 'e' && e->lm[0] == 'L') ? \
-	(e->s = ft_ldtoa((long double)*(e->a))) : 0;
-	(e->id[0] == 'f' && (e->lm[0] == "" || e->lm[0] == 'l')) ? \
-	(e->s = ft_dtoa((double)*(e->a))) : 0;
-	(e->id[0] == 'e' && (e->lm[0] == "" || e->lm[0] == 'l')) ? \
-	(e->s = ft_dtoa((double)*(e->a))) : 0;
+	(e->s = ft_ldtoa(*((long double *)e->a))) : 0;
+	(e->id[0] == 'f' && (e->lm[0] == '\0' || e->lm[0] == 'l')) ? \
+	(e->s = ft_dtoa(*((double *)e->a))) : 0;
+	(e->id[0] == 'e' && (e->lm[0] == '\0' || e->lm[0] == 'l')) ? \
+	(e->s = ft_dtoa(*((double *)e->a))) : 0;
 	ft_conv_cs(e);
 }
