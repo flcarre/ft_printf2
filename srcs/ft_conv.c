@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 18:32:13 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/06 15:25:06 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/06 18:30:34 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static void	ft_conv_cs(t_id *e)
 	e->ws = (e->lm[0] == 'l' && e->id[0] == 's') ? \
 	ft_wstrdup(e->arg.wp) : e->ws;
 	e->s = (e->lm[0] == '\0' && e->id[0] == 'c') ? ft_strdup(c) : 0;
-	e->s = (e->lm[0] == '\0' && e->id[0] == 's') ? ft_strdup(e->arg.cp) : e->s;
+	e->s = (e->arg.cp && e->lm[0] == '\0' && e->id[0] == 's') ? \
+	ft_strdup(e->arg.cp) : ft_strdup("(null)");
 }
 
 void		ft_conv(t_id *e)
