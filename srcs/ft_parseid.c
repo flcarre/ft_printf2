@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 20:01:48 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 21:03:33 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void		ft_prec(unsigned long *i, char *id, t_id *e, unsigned int pos)
 	if (id[i[0]] == '*')
 	{
 		pos += (e->w[1] != 0) ? 2 : 1;
-		e->w[1] = (e->w[1] != 0) ? pos - 2 : e->w[1];
+		// e->w[1] = (e->w[1] != 0) ? pos - 2 : e->w[1];
 		e->p[1] = pos - 1;
 		i[0]++;
 		e->p[1] = (id[i[0] + \
@@ -36,7 +36,7 @@ static void		ft_prec(unsigned long *i, char *id, t_id *e, unsigned int pos)
 	else
 	{
 		e->p[0] = ft_atoui(id + i[0]);
-		i[0] += (e->p[0] != 0) ? \
+		i[0] += (e->p[0] != 0 || id[i[0]] == '0') ? \
 		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) : 0;
 	}
 }

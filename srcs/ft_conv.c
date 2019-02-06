@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 18:32:13 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/06 18:30:34 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 21:35:24 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void		ft_conv(t_id *e)
 	(e->id[0] == 'e' && e->lm[0] == 'L') ? \
 	(e->s = ft_ldtoa(*((long double *)e->a))) : 0;
 	(e->id[0] == 'f' && (e->lm[0] == '\0' || e->lm[0] == 'l')) ? \
-	(e->s = ft_dtoa(*((double *)e->a))) : 0;
+	(e->s = ft_ldtoa(*((double *)e->a))) : 0;
 	(e->id[0] == 'e' && (e->lm[0] == '\0' || e->lm[0] == 'l')) ? \
-	(e->s = ft_dtoa(*((double *)e->a))) : 0;
+	(e->s = ft_ldtoa(*((double *)e->a))) : 0;
 	ft_conv_cs(e);
 }

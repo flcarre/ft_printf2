@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 11:32:41 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 18:25:50 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/06 21:48:52 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	ft_precf(t_id *e)
 	{
 		tmp = e->s;
 		s = ft_strnew(j);
-		ft_memset((void *)s, (int)'0', (unsigned long)j);
+		ft_memset((void *)s, (int)'0', (unsigned long)(j - 1));
 		e->s = ft_strjoin(e->s, s);
 		ft_memdel((void **)&tmp);
 		ft_memdel((void **)&s);
@@ -105,6 +105,7 @@ int			ft_precprocess(t_id *e)
 	unsigned int	i;
 
 	i = 0;
+	printf("%u\n", e->p[0]);
 	if (e->id[0] == 'c' || e->id[0] == 'p' || e->infnan)
 		return (0);
 	if (ft_toggleminus(e))
