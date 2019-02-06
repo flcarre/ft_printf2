@@ -6,14 +6,14 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 17:00:36 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/06 17:14:50 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-static void	ft_while(char *fmt, unsigned long *i, t_list **s, t_id **e)
+static t_id	*ft_while(char *fmt, unsigned long *i, t_list **s, t_id **e)
 {
 	while (fmt[i[0]])
 	{
@@ -24,9 +24,10 @@ static void	ft_while(char *fmt, unsigned long *i, t_list **s, t_id **e)
 		{
 			ft_delid(e);
 			ft_lstdel(s, &ft_delcontent);
-			return ;
+			return ((void *)0);
 		}
 	}
+	return (*e);
 }
 
 t_id		*ft_parse(char *fmt, t_list **s, va_list *args)
@@ -36,7 +37,8 @@ t_id		*ft_parse(char *fmt, t_list **s, va_list *args)
 
 	ft_bzero((void *)i, sizeof(unsigned long) * 4);
 	list[0] = (void *)0;
-	ft_while(fmt, i, s, &list[0]);
+	if (!ft_while(fmt, i, s, &list[0]))
+		return ((void *)0);
 	list[1] = list[0];
 	while (list[1])
 	{
