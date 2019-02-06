@@ -303,7 +303,11 @@ int main(int argc, char const *argv[]) {
 	// ft_printf("abcd");
 	// ft_printf("%d", 3);
 	// ft_printf("%d\n", 3);
-	ft_printf("abcd%dadsaaezx%ddfhbds", 3, 4);
+	// ft_printf("abcd%dadsaaezx%ddfhbds\n", 3, 4);
+	ft_printf("abcd%dadsaaezx%d\n", 3, 4);
+	ft_printf("abcd%dadsaaezx%d\n", 3, 4);
+	ft_printf("abcd%dadsaaezx%d\n", 3, 4);
+	ft_printf("abcd%dadsaaezx%d\n", 3, 4);
 	// ft_printf("%s\n", "abcd");
 
 	return 0;

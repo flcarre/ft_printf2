@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:04:14 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/06 16:28:10 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/06 18:09:00 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int		ft_printf(const char *format, ...)
 		i = i->next;
 	}
 	// printf("9\n");
-	va_end(args);
 	// printf("10\n");
 	ft_print(&list, &s, &r);
 	// printf("11\n");
@@ -52,5 +51,6 @@ int		ft_printf(const char *format, ...)
 	// printf("12\n");
 	ft_lstdel(&s, &ft_delcontent);
 	// printf("13\n");
+	va_end(args);
 	return (r);
 }

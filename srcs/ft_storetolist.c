@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 13:56:55 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 16:00:05 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/06 17:18:31 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int		ft_storetolist(char *s, unsigned long *i, t_list **str)
 	e->content_size = ft_strlen((char *)e->content) + 1;
 	e->next = (void *)0;
 	ft_lstenqueue(str, e);
-	printf("/%s/\n", e->content);
+	// printf("/%s/\n", e->content);
 	return (0);
 }
