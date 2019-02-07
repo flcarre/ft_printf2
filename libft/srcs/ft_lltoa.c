@@ -6,11 +6,12 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 11:09:13 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/08 17:12:54 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/07 16:41:33 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_lltoa(long long n)
 {

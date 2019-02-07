@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 21:03:33 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/07 15:54:44 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,17 @@ static void		ft_prec(unsigned long *i, char *id, t_id *e, unsigned int pos)
 	if (id[i[0]] == '*')
 	{
 		pos += (e->w[1] != 0) ? 2 : 1;
-		// e->w[1] = (e->w[1] != 0) ? pos - 2 : e->w[1];
 		e->p[1] = pos - 1;
 		i[0]++;
 		e->p[1] = (id[i[0] + \
 		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
 		ft_atoui(id + i[0]) : e->p[1];
-		i[0] += (id[i[0] + \
-		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
-		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
 		(id[i[0] + \
 		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
 		(e->pos = ((e->w[1] != 0) ? pos - 2 : pos - 1)) : (e->pos = pos);
+		i[0] += (id[i[0] + \
+		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
+		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
 	}
 	else
 	{
@@ -51,17 +50,17 @@ static void		ft_width(unsigned long *i, char *id, t_id *e, unsigned int pos)
 		e->w[1] = (id[i[0] + \
 		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
 		ft_atoui(id + i[0]) : e->w[1];
-		i[0] += (id[i[0] + \
-			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
-			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
 		e->pos = (id[i[0] + \
-			(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
-			pos - 1 : pos;
+		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
+		pos - 1 : pos;
+		i[0] += (id[i[0] + \
+		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10)] == '$') ? \
+		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) + 1 : 0;
 	}
 	else
 	{
 		e->w[0] = ft_atoui(id + i[0]);
-		i[0] += (e->w[0] != 0) ? \
+		i[0] += (e->w[0] != 0 || id[i[0]] == '0') ? \
 		(unsigned long)ft_udigitlen(ft_atoui(id + i[0]), 10) : 0;
 	}
 }

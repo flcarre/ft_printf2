@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 18:32:13 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/06 21:35:24 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/07 16:44:32 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ static void	ft_conv_cs(t_id *e)
 	w[0] = (e->lm[0] == 'l' && e->id[0] == 'c') ? e->arg.w : w[0];
 	c[0] = (e->lm[0] == '\0' && e->id[0] == 'c') ? e->arg.c : c[0];
 	e->ws = (e->lm[0] == 'l' && e->id[0] == 'c') ? ft_wstrdup(w) : 0;
-	e->ws = (e->lm[0] == 'l' && e->id[0] == 's') ? \
-	ft_wstrdup(e->arg.wp) : e->ws;
+	if (e->lm[0] == 'l' && !e->ws)
+		e->ws = (e->arg.wp && e->lm[0] == 'l' && e->id[0] == 's') ? \
+		ft_wstrdup(e->arg.wp) : ft_wstrdup(L"(null)");
 	e->s = (e->lm[0] == '\0' && e->id[0] == 'c') ? ft_strdup(c) : 0;
-	e->s = (e->arg.cp && e->lm[0] == '\0' && e->id[0] == 's') ? \
-	ft_strdup(e->arg.cp) : ft_strdup("(null)");
+	if (!e->s)
+		e->s = (e->arg.cp && e->lm[0] == '\0' && e->id[0] == 's') ? \
+		ft_strdup(e->arg.cp) : ft_strdup("(null)");
 }
 
 void		ft_conv(t_id *e)
@@ -39,7 +41,7 @@ void		ft_conv(t_id *e)
 	(e->id[0] == '{') ? ft_color(e) : 0;
 	(e->id[0] == '%') ? (e->s = ft_strdup("%")) : 0;
 	(e->id[0] == 'd' || e->id[0] == 'i') ? \
-	(e->s = ft_lltoa(*((long long *)e->a))) : 0;
+	(e->s = ft_lltoa(*((int*)e->a))) : 0;
 	(e->id[0] == 'o') ? \
 	(e->s = ft_ulltoa_base(*((unsigned long long *)e->a), "01234567")) : 0;
 	(e->id[0] == 'u') ? \

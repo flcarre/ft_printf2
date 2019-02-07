@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 12:40:01 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 14:10:08 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/07 17:00:08 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int			ft_fm(t_id *e)
 		e->s = ft_strjoin("-", tmp);
 		ft_memdel((void **)&tmp);
 	}
+	printf("%u\n", e->w[0]);
 	if ((e->id[0] == 's' || e->id[0] == 'c') && e->lm[0] == 'l')
 		return ((e->ws) ? 0 : -1);
 	return ((e->s) ? 0 : -1);
