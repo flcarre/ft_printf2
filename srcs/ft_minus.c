@@ -6,11 +6,23 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 13:22:30 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 17:23:31 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/07 22:23:40 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void	ft_wrestore(t_id *e)
+{
+	if ((e->fm & 2) == 2 || (e->fm & 1) == 1)
+		e->w[0] += 1;
+	if (e->id[0] == 'p' || \
+	((e->fm & 16) == 16 && (e->id[0] == 'x' || e->id[0] == 'X')))
+		e->w[0] += 2;
+	else if ((e->fm & 16) == 16 && (e->id[0] == 'o' || \
+	e->id[0] == 'f' || e->id[0] == 'e'))
+		e->w[0] += 1;
+}
 
 static void	ft_wminus(t_id *e)
 {
@@ -37,6 +49,7 @@ void		ft_minus(t_id *e)
 	char			*s;
 	unsigned long	i;
 
+	ft_wrestore(e);
 	if (!ft_strcmp("l", e->lm) && (e->id[0] == 's' || e->id[0] == 'c'))
 	{
 		ft_wminus(e);

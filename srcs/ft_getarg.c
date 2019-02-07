@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 00:22:45 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 20:54:16 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/07 21:42:17 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,32 +46,37 @@ static void	ft_get_wp(va_list arg, t_id *e)
 		e->p[0] = (e->p[2]) ? 6 : e->p[0];
 }
 
-static void	ft_get(va_list arg, unsigned int i, t_var *u, t_id *e)
+static int	ft_get(va_list arg, unsigned int i, t_var *u, t_id *e)
 {
 	while (i--)
 		(*u).p = va_arg(arg, void *);
-	e->a = (*u).p;
+	e->s = ft_ulltoa_base((unsigned long long)(*u).p, "0123456789abcdef");
+	return ((e->s) ? 0 : -1);
  }
 
-void		ft_getarg(va_list args, t_id *e)
+int			ft_getarg(va_list args, t_id *e)
 {
 	va_list			tmp;
 	int				i;
+	int				r;
 
 	i = -1;
 	va_copy(tmp, args);
 	while (++i < 40)
 	{
-		if (!ft_strcmp(glo_get[i].lm, e->lm) && !ft_strcmp(glo_get[i].id, e->id))
+		if (!ft_strcmp(glo_get[i].lm, e->lm) && \
+		!ft_strcmp(glo_get[i].id, e->id))
 		{
-			glo_get[i].f(tmp, e->pos, &(e->arg), e);
+			r = glo_get[i].f(tmp, e->pos, &(e->arg), e);
 			ft_get_wp(args, e);
 			va_end(tmp);
-			return ;
+			return (r);
 		}
 	}
+	r = ft_get15(e);
 	if (!ft_strcmp("", e->lm) && !ft_strcmp("p", e->id))
-		ft_get(tmp, e->pos, &(e->arg), e);
+		r = ft_get(tmp, e->pos, &(e->arg), e);
 	ft_get_wp(args, e);
 	va_end(tmp);
+	return (r);
 }

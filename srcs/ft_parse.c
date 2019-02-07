@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 19:08:27 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/07 21:15:08 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,14 @@ static t_id	*ft_while(char *fmt, unsigned long *i, t_list **s, t_id **e)
 	return (*e);
 }
 
-t_id		*ft_parse(char *fmt, t_list **s, va_list args)
+t_id		*ft_parse(char *fmt, t_list **s)
 {
-	t_id			*list[2];
+	t_id			*list;
 	unsigned long	i[4];
 
 	ft_bzero((void *)i, sizeof(unsigned long) * 4);
-	list[0] = (void *)0;
-	if (!ft_while(fmt, i, s, &list[0]))
+	list = (void *)0;
+	if (!ft_while(fmt, i, s, &list))
 		return ((void *)0);
-	list[1] = list[0];
-	while (list[1])
-	{
-		ft_getarg(args, list[1]);
-		list[1] = list[1]->next;
-	}
-	return (list[0]);
+	return (list);
 }

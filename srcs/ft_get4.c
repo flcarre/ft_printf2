@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lltoa.c                                         :+:      :+:    :+:   */
+/*   ft_get4.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 11:09:13 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/07 17:28:38 by lutsiara         ###   ########.fr       */
+/*   Created: 2019/02/07 21:22:08 by lutsiara          #+#    #+#             */
+/*   Updated: 2019/02/07 21:29:20 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdint.h>
+#include "ft_printf.h"
 
-char	*ft_lltoa(int64_t n)
+int		ft_get15(t_id *e)
 {
-	unsigned int	i;
-	uint64_t		x;
-	char			*tmp;
-
-	i = ft_digitlen(n, 10);
-	if (!(tmp = ft_strnew((unsigned long)i)))
-		return ((void *)0);
-	*tmp = (n < 0) ? '-' : '\0';
-	x = n;
-	while ((n < 0) ? (--i) : (i--))
-	{
-		*(tmp + i) = '0' + x % 10;
-		x /= 10;
-	}
-	return (tmp);
+	(e->id[0] == '{') ? ft_color(e) : 0;
+	(e->id[0] == '%') ? (e->s = ft_strdup("%")) : 0;
+	return ((e->s) ? 0 : -1);
 }

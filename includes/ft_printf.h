@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/07 15:53:20 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/07 21:44:06 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,11 @@ typedef struct				s_id
 	wchar_t					*ws;
 	char					sign;
 	t_var					arg;
-	void					*a;
 	struct s_id				*next;
 }							t_id;
 
 int							ft_printf(const char *format, ...);
-t_id						*ft_parse(char *fmt, t_list **s, va_list args);
+t_id						*ft_parse(char *fmt, t_list **s);
 t_id						*ft_newid(void);
 void						ft_delid(t_id **list);
 void						ft_enqueueid(t_id **list, t_id *e);
@@ -70,38 +69,38 @@ int							ft_isfm(char c);
 int							ft_islm(char *s);
 void						ft_iscolor(unsigned long *i, char *s, t_id *e);
 void						ft_lmprocess(char *f, char *lm, unsigned long *i);
-void						ft_getarg(va_list args, t_id *e);
-void						ft_get0(va_list arg, unsigned int i, t_var *u, \
+int							ft_getarg(va_list args, t_id *e);
+int							ft_get0(va_list arg, unsigned int i, t_var *u, \
 							t_id *e);
-void						ft_get1(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get2(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get3(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get4(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get5(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get6(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get7(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get8(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get9(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get10(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get11(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get12(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get13(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_get14(va_list arg, unsigned int i, t_var *u, \
-							t_id *e);
-void						ft_conv(t_id *e);
+int							ft_get1(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get2(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get3(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get4(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get5(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get6(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get7(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get8(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get9(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get10(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get11(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get12(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get13(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get14(va_list arg, unsigned int i, \
+							t_var *u, t_id *e);
+int							ft_get15(t_id *e);
 void						ft_color(t_id *e);
 int							ft_precprocess(t_id *e);
 void						ft_eprocess(t_id *e);

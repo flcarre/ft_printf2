@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/02/06 15:29:54 by flcarre          ###   ########.fr        #
+#    Updated: 2019/02/07 21:28:27 by lutsiara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -143,10 +143,10 @@ SRCS = $(SRCDIR)ft_printf.c \
 	   $(SRCDIR)ft_get1.c \
 	   $(SRCDIR)ft_get2.c \
 	   $(SRCDIR)ft_get3.c \
+	   $(SRCDIR)ft_get4.c \
 	   $(SRCDIR)ft_storetolist.c \
 	   $(SRCDIR)ft_enqueueid.c \
 	   $(SRCDIR)ft_color.c \
-	   $(SRCDIR)ft_conv.c \
 	   $(SRCDIR)ft_delid.c \
 	   $(SRCDIR)ft_dies.c \
 	   $(SRCDIR)ft_fm.c \
