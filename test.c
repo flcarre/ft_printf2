@@ -11,6 +11,9 @@
 int main(int argc, char const *argv[]) {
 	(void)argc;
 	(void)argv;
-	printf("/%*.*d/ || /%*.*d/ || /%1$d/", 5, 3, 2, 6, 4, 3, 42);
+	// ft_printf("/%*.*d/ || /%*.*d/ || /%d/\n", 5, 3, 2, 6, 4, 3, 42);
+	// printf("/%*.*d/ || /%*.*d/ || /%d/", 5, 3, 2, 6, 4, 3, 42);
+	printf("%020d\n", 9);
+	printf("%20d\n", 9);
 	return 0;
 }
