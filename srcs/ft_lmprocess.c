@@ -6,13 +6,13 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 14:54:17 by flcarre           #+#    #+#             */
-/*   Updated: 2019/01/30 21:26:25 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/08 04:58:01 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_lmprocess(char *f, char *lm, unsigned long *i)
+void	ft_lmprocess(char **f, char *lm)
 {
 	unsigned long	n;
 
@@ -27,5 +27,5 @@ void	ft_lmprocess(char *f, char *lm, unsigned long *i)
 	lm[1] = (n > 1 && ft_strncmp(f, "ll", n) == 0) ? 'l' : '\0';
 	lm[1] = (n > 1 && ft_strncmp(f, "hh", n) == 0) ? 'h' : lm[1];
 	lm[2] = '\0';
-	i[0] += ft_strlen(lm);
+	(*f) += ft_strlen(lm);
 }

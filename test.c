@@ -13,7 +13,7 @@ int main(int argc, char const *argv[]) {
 	(void)argv;
 	// ft_printf("/%*.*d/ || /%*.*d/ || /%d/\n", 5, 3, 2, 6, 4, 3, 42);
 	// printf("/%*.*d/ || /%*.*d/ || /%d/", 5, 3, 2, 6, 4, 3, 42);
-	printf("%020d\n", 9);
-	printf("%20d\n", 9);
+	printf("%.1s\n", "ab");
+	// printf("%20d\n", 9);
 	return 0;
 }
