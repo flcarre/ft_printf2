@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/02/07 21:28:27 by lutsiara         ###   ########.fr        #
+#    Updated: 2019/02/08 05:14:54 by lutsiara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,7 +124,6 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_lltoa.c \
 		  $(LIBDIR)$(SRCDIR)ft_lltoa_base.c \
 		  $(LIBDIR)$(SRCDIR)ft_trim.c \
-		  $(LIBDIR)$(SRCDIR)ft_floatstrround.c \
 		  $(LIBDIR)$(SRCDIR)ft_udigitlen.c \
 		  $(LIBDIR)$(SRCDIR)get_next_line.c
 
@@ -155,6 +154,7 @@ SRCS = $(SRCDIR)ft_printf.c \
 	   $(SRCDIR)ft_precprocess.c \
 	   $(SRCDIR)ft_eprocess.c \
 	   $(SRCDIR)ft_erounding.c \
+	   $(SRCDIR)ft_frounding.c \
 	   $(SRCDIR)ft_print.c \
 	   $(SRCDIR)ft_signconv.c \
 	   $(SRCDIR)ft_space.c \

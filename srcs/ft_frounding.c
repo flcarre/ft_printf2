@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_floatstrround.c                                 :+:      :+:    :+:   */
+/*   ft_frounding.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 18:41:20 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/05 13:03:44 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/08 05:14:00 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_floatstrround(char **str, unsigned int n)
+void	ft_frounding(char **str, unsigned int n)
 {
 	unsigned int	i;
 	char			*tmp;
