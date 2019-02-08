@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 13:40:14 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/06 14:14:00 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/08 01:40:29 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void		ft_eprocess(t_id *e)
 	if (i == 1 && e->s[0] == '0' && e->s[2] && (pow = 1))
 	{
 		i++;
-		while (e->s[i] && e->s[i] != '0')
+		while (e->s[i] && e->s[i] == '0')
 			i++;
 		(e->s[i]) ? ft_movedot(e->s, 1, i) : 0;
 		ft_trim(&(e->s));
