@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/08 03:20:27 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/08 03:39:00 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static void		ft_prec(unsigned long *i, char *id, t_id *e, unsigned int *pos)
 	i[0]++;
 	if (id[i[0]] == '*')
 	{
-		*pos += (e->w[1] != 0) ? 2 : 1;
-		e->p[1] = (*pos) - 1;
+		e->p[1] = *pos;
 		i[0]++;
+		(*pos)++;
 		e->pos = *pos;
 	}
 	else
@@ -36,9 +36,9 @@ static void		ft_width(unsigned long *i, char *id, t_id *e, unsigned int *pos)
 {
 	if (id[i[0]] == '*')
 	{
-		(*pos)++;
-		e->w[1] = (*pos) - 1;
+		e->w[1] = *pos;
 		i[0]++;
+		(*pos)++;
 		e->pos = *pos;
 	}
 	else
