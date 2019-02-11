@@ -1,88 +1,88 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_glo_print2.c                                    :+:      :+:    :+:   */
+/*   ft_print0.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 07:15:19 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/08 09:05:39 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/09 16:45:44 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print10(t_id *e, va_list args)
+int	ft_print0(t_id *e, va_list args)
 {
-	unsigned char		uc;
-	int					r;
+	int			i;
+	int			r;
 
 	r = 0;
-	uc = (unsigned char)va_arg(args, unsigned int);
+	i = va_arg(args, int);
 	if ((e->fm & 4) != 4)
-		r += ft_wprocess3(e, uc);
-	r += ft_pprocess3(e, uc);
+		r += ft_wprocess0(e, i);
+	r += ft_pprocess0(e, i);
 	if ((e->fm & 4) == 4)
-		r += ft_wprocess3(e, uc);
+		r += ft_wprocess0(e, i);
 	return (r);
 }
 
-int	ft_print11(t_id *e, va_list args)
+int	ft_print1(t_id *e, va_list args)
 {
-	unsigned long		ul;
-	int					r;
+	short		s;
+	int			r;
 
 	r = 0;
-	ul = va_arg(args, unsigned long);
+	s = (short)va_arg(args, int);
 	if ((e->fm & 4) != 4)
-		r += ft_wprocess3(e, ul);
-	r += ft_pprocess3(e, ul);
+		r += ft_wprocess0(e, s);
+	r += ft_pprocess0(e, s);
 	if ((e->fm & 4) == 4)
-		r += ft_wprocess3(e, ul);
+		r += ft_wprocess0(e, s);
 	return (r);
 }
 
-int	ft_print12(t_id *e, va_list args)
+int	ft_print2(t_id *e, va_list args)
 {
-	unsigned long long	ull;
-	int					r;
+	char		c;
+	int			r;
 
 	r = 0;
-	ull = va_arg(args, unsigned long long);
+	c = (char)va_arg(args, int);
 	if ((e->fm & 4) != 4)
-		r += ft_wprocess3(e, ull);
-	r += ft_pprocess3(e, ull);
+		r += ft_wprocess0(e, c);
+	r += ft_pprocess0(e, c);
 	if ((e->fm & 4) == 4)
-		r += ft_wprocess3(e, ull);
+		r += ft_wprocess0(e, c);
 	return (r);
 }
 
-int	ft_print13(t_id *e, va_list args)
+int	ft_print3(t_id *e, va_list args)
 {
-	double				d;
-	int					r;
+	long		l;
+	int			r;
 
 	r = 0;
-	d = va_arg(args, double);
+	l = va_arg(args, long);
 	if ((e->fm & 4) != 4)
-		r += ft_wprocess4(e, d);
-	r += ft_pprocess4(e, d);
+		r += ft_wprocess0(e, l);
+	r += ft_pprocess0(e, l);
 	if ((e->fm & 4) == 4)
-		r += ft_wprocess4(e, d);
+		r += ft_wprocess0(e, l);
 	return (r);
 }
 
-int	ft_print14(t_id *e, va_list args)
+int	ft_print4(t_id *e, va_list args)
 {
-	long double			ld;
-	int					r;
+	long long	ll;
+	int			r;
 
 	r = 0;
-	ld = va_arg(args, long double);
+	ll = va_arg(args, long long);
 	if ((e->fm & 4) != 4)
-		r += ft_wprocess4(e, ld);
-	r += ft_pprocess4(e, ld);
+		r += ft_wprocess0(e, ll);
+	r += ft_pprocess0(e, ll);
 	if ((e->fm & 4) == 4)
-		r += ft_wprocess4(e, ld);
+		r += ft_wprocess0(e, ll);
 	return (r);
 }

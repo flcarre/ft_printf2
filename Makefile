@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/02/08 05:14:54 by lutsiara         ###   ########.fr        #
+#    Updated: 2019/02/09 16:31:32 by lutsiara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,37 +129,37 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 
 LIBOBJS = $(LIBSRCS:.c=.o)
 
-SRCS = $(SRCDIR)ft_printf.c \
-	   $(SRCDIR)ft_parse.c \
-	   $(SRCDIR)ft_parseid.c \
-	   $(SRCDIR)ft_isid.c \
-	   $(SRCDIR)ft_idisnull.c \
-	   $(SRCDIR)ft_iscolor.c \
-	   $(SRCDIR)ft_lmprocess.c \
-	   $(SRCDIR)ft_isfm.c \
-	   $(SRCDIR)ft_newid.c \
-	   $(SRCDIR)ft_getarg.c \
-	   $(SRCDIR)ft_get1.c \
-	   $(SRCDIR)ft_get2.c \
-	   $(SRCDIR)ft_get3.c \
-	   $(SRCDIR)ft_get4.c \
-	   $(SRCDIR)ft_storetolist.c \
-	   $(SRCDIR)ft_enqueueid.c \
-	   $(SRCDIR)ft_color.c \
-	   $(SRCDIR)ft_delid.c \
-	   $(SRCDIR)ft_dies.c \
-	   $(SRCDIR)ft_fm.c \
-	   $(SRCDIR)ft_minus.c \
-	   $(SRCDIR)ft_plus.c \
-	   $(SRCDIR)ft_precprocess.c \
-	   $(SRCDIR)ft_eprocess.c \
-	   $(SRCDIR)ft_erounding.c \
-	   $(SRCDIR)ft_frounding.c \
-	   $(SRCDIR)ft_print.c \
-	   $(SRCDIR)ft_signconv.c \
-	   $(SRCDIR)ft_space.c \
-	   $(SRCDIR)ft_widthprocess.c \
-	   $(SRCDIR)ft_zero.c
+SRCS = #$(SRCDIR)ft_printf.c \
+#	   $(SRCDIR)ft_parse.c \
+#	   $(SRCDIR)ft_parseid.c \
+#	   $(SRCDIR)ft_isid.c \
+#	   $(SRCDIR)ft_idisnull.c \
+#	   $(SRCDIR)ft_iscolor.c \
+#	   $(SRCDIR)ft_lmprocess.c \
+#	   $(SRCDIR)ft_isfm.c \
+#	   $(SRCDIR)ft_newid.c \
+#	   $(SRCDIR)ft_getarg.c \
+#	   $(SRCDIR)ft_get1.c \
+#	   $(SRCDIR)ft_get2.c \
+#	   $(SRCDIR)ft_get3.c \
+#	   $(SRCDIR)ft_get4.c \
+#	   $(SRCDIR)ft_storetolist.c \
+#	   $(SRCDIR)ft_enqueueid.c \
+#	   $(SRCDIR)ft_color.c \
+#	   $(SRCDIR)ft_delid.c \
+#	   $(SRCDIR)ft_dies.c \
+#	   $(SRCDIR)ft_fm.c \
+#	   $(SRCDIR)ft_minus.c \
+#	   $(SRCDIR)ft_plus.c \
+#	   $(SRCDIR)ft_precprocess.c \
+#	   $(SRCDIR)ft_eprocess.c \
+#	   $(SRCDIR)ft_erounding.c \
+#	   $(SRCDIR)ft_frounding.c \
+#	   $(SRCDIR)ft_print.c \
+#	   $(SRCDIR)ft_signconv.c \
+#	   $(SRCDIR)ft_space.c \
+#	   $(SRCDIR)ft_widthprocess.c \
+#	   $(SRCDIR)ft_zero.c
 
 OBJS = $(SRCS:.c=.o)
 
