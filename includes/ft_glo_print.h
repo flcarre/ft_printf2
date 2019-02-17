@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 02:05:05 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/08 07:14:11 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/14 15:24:39 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct				s_print
 {
 	int						(*f)(t_id *, va_list);
 	char					lm[3];
-	char					id[10];	 
+	char					id[10];
 }							t_print
 
 t_f							glo_print[] = {
@@ -58,9 +58,29 @@ t_f							glo_print[] = {
 							{&ft_print11, "l", "X"},
 							{&ft_print12, "ll", "X"},
 							{&ft_print13, "", "f"},
+							{&ft_print13, "l", "f"},
 							{&ft_print14, "L", "f"},
-							{&ft_print13, "", "e"},
-							{&ft_print14, "L", "e"}
+							{&ft_print15, "", "p"},
+							{&ft_print16, "", "{}"},
+							{&ft_print16, "", "{BLACK}"},
+							{&ft_print16, "", "{RED}"},
+							{&ft_print16, "", "{GREEN}"},
+							{&ft_print16, "", "{YELLOW}"},
+							{&ft_print16, "", "{BLUE}"},
+							{&ft_print16, "", "{PURPLE}"},
+							{&ft_print16, "", "{CYAN}"},
+							{&ft_print16, "", "{WHITE}"},
+							{&ft_print16, "", "{GREY}"},
+							{&ft_print16, "", "{ORANGE}"},
+							{&ft_print16, "", "{HBLACK}"},
+							{&ft_print16, "", "{HRED}"},
+							{&ft_print16, "", "{HGREEN}"},
+							{&ft_print16, "", "{HYELLOW}"},
+							{&ft_print16, "", "{HBLUE}"},
+							{&ft_print16, "", "{HPURPLE}"},
+							{&ft_print16, "", "{HCYAN}"},
+							{&ft_print16, "", "{HWHITE}"},
+							{&ft_print17, "", "%"}
 };
 
 #endif

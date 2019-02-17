@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/08 07:02:59 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/14 20:48:38 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,26 +45,33 @@ static void	ft_lm(char **f, char *lm)
 
 static void	ft_p(char **f, t_id *e, va_list args)
 {
-	if (**f != '.' && (e->p = 6))
+	int				r;
+
+	if (**f != '.' && (e->p[0] = 6))
 		return ;
+	e->p[1] = 1;
 	(*f)++;
 	if (**f == '*')
 	{
-		e->p = va_arg(args, int);
+		r = va_arg(args, int);
+		(r < 0) ? (e->p[0] = 6) : (e->p[0] = r);
 		(*f)++;
 	}
 	else
 	{
-		e->p = ft_atoui(*f);
-		*f += (e->p != 0 || **f == '0') ? ft_udigitlen(ft_atoui(*f), 10) : 0;
+		e->p[0] = ft_atoui(*f);
+		*f += (e->p[0] != 0 || **f == '0') ? ft_udigitlen(ft_atoui(*f), 10) : 0;
 	}
 }
 
 static void	ft_w(char **f, t_id *e, va_list args)
 {
+	int				r;
+
 	if (**f == '*')
 	{
-		e->w = va_arg(args, int);
+		r = va_arg(args, int);
+		(r < 0 && (e->w = -r)) ? (e->fm |= 4) : (e->w = r);
 		(*f)++;
 	}
 	else
@@ -78,7 +85,7 @@ void		ft_parse(t_id *e, char **f, va_list args)
 {
 	e->fm = 0;
 	e->w = 0;
-	e->p = 0;
+	ft_bzero((void *)e->p, 2 *sizeof(unsigned int));
 	ft_bzero((void *)e->lm, 3);
 	ft_bzero((void *)e->id, 10);
 	(ft_isid(**f) == 6) ? ft_color(f, e->id) : 0;

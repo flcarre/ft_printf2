@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 07:15:19 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/09 16:46:07 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/14 18:00:10 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,30 @@ int	ft_print15(t_id *e, va_list args)
 {
 	void			*p;
 	int				r;
+	int				t;
 
+	t = 0;
 	r = 0;
-	uc = va_arg(args, void *);
+	p = va_arg(args, void *);
 	if ((e->fm & 4) != 4)
-		r += ft_wprocess5(e, p);
-	r += ft_pprocess5(e, p);
+		r = ((t = ft_wprocess3(e, (unsigned long long)p)) < 0) ? t : r + t;
+	r = (t >= 0 && (t = ft_pprocess3(e, (unsigned long long)p)) >= 0) ? \
+	r + t : t;
 	if ((e->fm & 4) == 4)
-		r += ft_wprocess5(e, p);
+		r = (t >= 0 && (t = ft_wprocess3(e, (unsigned long long)p)) >= 0) ? \
+		r + t : t;
 	return (r);
 }
 
 int	ft_print16(t_id *e, va_list args)
 {
-	int					r;
-
-	r = 0;
-	r += ft_colorprocess(e);
-	return (r);
+	(void)args;
+	return (ft_printcolor(e));
 }
 
 int	ft_print17(t_id *e, va_list args)
 {
-	ft_putchar('%');
-	return (1);
+	(void)e;
+	(void)args;
+	return ((int)ft_iputchar('%'));
 }

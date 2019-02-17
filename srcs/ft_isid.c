@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/20 14:53:37 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/08 05:44:21 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/14 15:25:23 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_isid(char c)
 		return (2);
 	if (c == 'o' || c == 'u' || c == 'x' || c == 'X')
 		return (3);
-	if (c == 'e' || c == 'f')
+	if (c == 'f')
 		return (4);
 	if (c == '%')
 		return (5);

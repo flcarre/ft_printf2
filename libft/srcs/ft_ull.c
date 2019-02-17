@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 17:35:14 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/23 17:44:14 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/13 18:11:22 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_ull(unsigned long long x, char *s)
 {
 	unsigned long	y;
 
+	*s = '\0';
 	while (x > ULONG_MAX)
 	{
 		*(--s) = '0' + x % 10;

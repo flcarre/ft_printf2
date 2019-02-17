@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ldtoa.c                                         :+:      :+:    :+:   */
+/*   ft_iputldnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 17:17:57 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/01/24 01:05:36 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/14 17:36:27 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 #include <float.h>
 
 static void	ft_fill_tx3(unsigned int *p[4], int exp)
 {
 	int				min;
-	unsigned int	c;
-	unsigned int	y;
+	unsigned int	cy[2];
 
-	while (exp < 0)
+	while (exp < 0 && (min = (9 <= -exp) ? 9 : -exp))
 	{
-		c = 0;
-		min = (9 <= -exp) ? 9 : -exp;
+		cy[0] = 0;
 		p[3] = p[1];
 		while (p[3] < p[0])
 		{
-			y = *p[3] & ((1 << min) - 1);
-			*p[3] = (*p[3] >> min) + c;
-			c = (1000000000 >> min) * y;
+			cy[1] = *p[3] & ((1 << min) - 1);
+			*p[3] = (*p[3] >> min) + cy[0];
+			cy[0] = (1000000000 >> min) * cy[1];
 			p[3]++;
 		}
 		(!(*p[1])) ? p[1]++ : 0;
-		(c) ? *(p[0]++) = c : 0;
+		(cy[0]) ? (*(p[0]++) = cy[0]) : 0;
 		exp += min;
 	}
 }
@@ -43,10 +41,9 @@ static void	ft_fill_tx2(unsigned int *p[4], int exp)
 	unsigned int	c;
 	unsigned long	y;
 
-	while (exp > 0)
+	while (exp > 0 && (min = (29 <= exp) ? 29 : exp))
 	{
 		c = 0;
-		min = (29 <= exp) ? 29 : exp;
 		p[3] = p[0] - 1;
 		while (p[3] >= p[1])
 		{
@@ -91,57 +88,52 @@ static void	ft_fill_tx(long double x, unsigned int *tx, \
 	ft_fill_tx2(p, exp);
 }
 
-static void	ft_toa(unsigned int *p[4], char **a)
+static void	ft_print(unsigned int *p[4], t_id *e, long *r, char *s)
 {
-	char	*s;
-	char	buf[9 + LDBL_MANT_DIG / 4];
+	char	buf[9 + 1];
 
-	p[3] = p[1] - 1;
-	while (++p[3] <= p[2])
+	while (r[0] != -1 && p[3] <= p[2])
 	{
 		s = ft_ull(*p[3], buf + 9);
-		if (p[3] != p[1])
+		if ((p[3]++) != p[1])
 			while (s > buf)
 				*(--s) = '0';
 		else if (s == buf + 9)
 			*(--s) = '0';
-		ft_strstore(a, s, buf + 9 - s);
+		r[0] = ((r[1] = ft_iputnstr(s, buf + 9 - s)) < 0) ? r[1] : r[1] + r[0];
 	}
-	ft_strstore(a, ".", 1);
-	while (p[3] < p[0])
+	(r[0] != -1 && (e->p || (e->fm & 16) == 16)) ? \
+	(r[0] = ((r[1] = ft_iputchar('.')) < 0) ? r[1] : r[1] + r[0]) : 0;
+	while (r[0] != -1 && p[3] < p[0] && e->p)
 	{
-		s = ft_ull(*p[3], buf + 9);
+		s = ft_ull(*(p[3]++), buf + 9);
 		while (s > buf)
 			*(--s) = '0';
-		ft_strstore(a, s, 9);
-		p[3]++;
+		r[0] = ((r[1] = ft_iputnstr(s, (9 <= e->p) ? 9 : e->p)) < 0) ? \
+		r[1] : r[1] + r[0];
+		e->p -= (9 <= e->p) ? 9 : e->p;
 	}
+	r[0] = ((r[1] = ft_iputxchar('0', e->p)) < 0) ? r[1] : r[1] + r[0];
 }
 
-char		*ft_ldtoa(long double x)
+long		ft_iputldnbr(long double x, t_id *e)
 {
-	char			*a;
 	unsigned int	tx[SIZE_LD_TX];
 	unsigned int	*p[4];
-	char			*tmp;
+	long			r[2];
 
-	a = (void *)0;
-	tmp = (void *)0;
+	ft_bzero((void *)r, 2 * sizeof(long));
+	ft_bzero((void *)tx, SIZE_LD_TX * sizeof(unsigned int));
+	(ft_isinf(x)) ? (r[0] = ft_iputstr("inf")) : 0;
+	(ft_isnan(x)) ? (r[0] = ft_iputstr("nan")) : 0;
 	if (ft_isnan(x) || ft_isinf(x))
-	{
-		if (!(a = ft_strnew(3 + ft_signbit(0, &x))))
-			return ((void *)0);
-		(ft_isinf(x)) ? ft_strcpy(a, (ft_signbit(0, &x)) ? "-inf" : "inf") : 0;
-		(ft_isnan(x)) ? ft_strcpy(a, (ft_signbit(0, &x)) ? "-nan" : "nan") : 0;
-		return (a);
-	}
-	ft_bzero((void *)tx, sizeof(tx));
+		return (r[0]);
 	ft_fill_tx(x, tx, sizeof(tx), p);
-	(p[1] > tx) ? p[1] = tx : 0;
-	ft_toa(p, &a);
-	ft_trim(&a);
-	if (ft_signbit(0, &x) && (tmp = a))
-		a = ft_strjoin("-", a);
-	ft_memdel((void **)&tmp);
-	return (a);
+	ft_dorounding(p, e);
+	while (p[0] > p[1] && !p[0][-1])
+		p[0]--;
+	(p[1] > p[2]) ? (p[1] = p[2]) : 0;
+	p[3] = p[1];
+	ft_print(p, e, r, (void *)0);
+	return (r[0]);
 }
