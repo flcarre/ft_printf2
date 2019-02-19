@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:44:47 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/18 17:28:26 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/19 16:44:23 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ double				ft_dfrexp(double x, int *p);
 long double			ft_ldfrexp(long double x, int *p);
 double				ft_dexp(double x, int e);
 long double			ft_ldexp(long double x, int e);
+unsigned int		ft_ld_ldiglen(long double n, long double base);
 void				*ft_memset(void *b, int c, unsigned long len);
 void				ft_bzero(void *s, unsigned long n);
 void				*ft_memcpy(void *dst, const void *src, unsigned long n);
@@ -59,5 +60,6 @@ int					ft_isdigit(int c);
 int					ft_isspace(int c);
 double				ft_dabs(double x);
 long double			ft_ldabs(long double x);
+unsigned long		ft_wstrlen(const int *ws);
 
 #endif

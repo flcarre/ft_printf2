@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 07:15:19 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/11 22:44:20 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/19 16:55:11 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int	ft_print8(t_id *e, va_list args)
 	t = 0;
 	r = 0;
 	ui = va_arg(args, unsigned int);
+	ft_wcalc0(e, ui);
 	if ((e->fm & 4) != 4)
 		r = ((t = ft_wprocess3(e, ui) < 0) ? t : r + t;
 	r = (t >= 0 && (t = ft_pprocess3(e, ui)) >= 0) ? r + t : t;
@@ -89,6 +90,7 @@ int	ft_print9(t_id *e, va_list args)
 	t = 0;
 	r = 0;
 	us = (unsigned short)va_arg(args, unsigned int);
+	ft_wcalc0(e, us);
 	if ((e->fm & 4) != 4)
 		r = ((t = ft_wprocess3(e, us) < 0) ? t : r + t;
 	r = (t >= 0 && (t = ft_pprocess3(e, us)) >= 0) ? r + t : t;

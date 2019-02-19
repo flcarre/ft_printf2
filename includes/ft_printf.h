@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/14 20:46:13 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/19 16:56:17 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ int							ft_pprocess1(t_id *e, char *s);
 int							ft_pprocess2(t_id *e, wchar_t *ws);
 int							ft_pprocess3(t_id *e, unsigned long long x);
 int							ft_pprocess4(t_id *e, long double x);
-
+void						ft_wcalc0(t_id *e, unsigned long long x);
+void						ft_wcalc1(t_id *e, long double x);
 #endif
