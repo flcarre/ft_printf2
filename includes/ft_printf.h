@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/19 16:56:17 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/19 20:55:42 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void						ft_parse(t_id *e, char **f, va_list args);
 int							ft_idisnull(t_id *e);
 int							ft_isid(char c);
 int							ft_isfm(char c);
-int							ft_signconv(char c);
 long						ft_iputldnbr(long double x, t_id *e);
+int							ft_printcolor(t_id *e);
 void						ft_dorounding(unsigned int *p[4], t_id *e);
 int							ft_print0(t_id *e, va_list args);
 int							ft_print1(t_id *e, va_list args);
@@ -65,4 +65,5 @@ int							ft_pprocess3(t_id *e, unsigned long long x);
 int							ft_pprocess4(t_id *e, long double x);
 void						ft_wcalc0(t_id *e, unsigned long long x);
 void						ft_wcalc1(t_id *e, long double x);
+
 #endif

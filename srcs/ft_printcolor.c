@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 15:20:51 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/18 17:21:46 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/19 20:56:30 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_printcolor(t_id *e)
 	(!ft_strcmp(e->id, "{}")) ? (r = ft_iputstr("\033[m")) : 0;
 	(!ft_strcmp(e->id, "{BLACK}")) ? (r = ft_iputstr("\033[30m")) : 0;
 	(!ft_strcmp(e->id, "{RED}")) ? (r = ft_iputstr("\033[31m")) : 0;
-	(!ft_strcmp(e->id, "{GREEN}")) ? (r = ft_iputstr("\033[32m") : 0;
+	(!ft_strcmp(e->id, "{GREEN}")) ? (r = ft_iputstr("\033[32m")) : 0;
 	(!ft_strcmp(e->id, "{YELLOW}")) ? (r = ft_iputstr("\033[33m")) : 0;
 	(!ft_strcmp(e->id, "{BLUE}")) ? (r = ft_iputstr("\033[34m")) : 0;
 	(!ft_strcmp(e->id, "{PURPLE}")) ? (r = ft_iputstr("\033[35m")) : 0;

@@ -16,6 +16,12 @@ int main(int argc, char const *argv[]) {
 	// printf("%.1s\n", "ab");
 	// printf("%20d\n", 9);
 	// printf("% .3c\n", 65);
-	printf("%10s", (void *)0);
+	// printf("%p\n", 42);
+	// printf("%.5p\n", 42);
+	// printf("%05.5p\n", 42);
+	// printf("%010.5p\n", 42);
+	char str[] = "defg\n";
+	ft_printf("abc\n");
+	ft_printf(1 + str);
 	return 0;
 }

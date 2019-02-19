@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 18:14:55 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/14 17:02:23 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/19 20:50:27 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void		ft_dorounding(unsigned int *p[4], t_id *e)
 	unsigned int	i;
 	unsigned int	x;
 
-	pr = e->p;
+	pr = (int)e->p[0];
 	if (pr < 9 * (p[0] - p[2] - 1))
 	{
 		p[3] = p[2] + 1 + ((pr + 9 * LDBL_MAX_EXP) / 9 - LDBL_MAX_EXP);

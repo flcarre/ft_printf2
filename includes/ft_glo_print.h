@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 02:05:05 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/14 15:24:39 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/19 20:49:05 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ typedef struct				s_print
 	int						(*f)(t_id *, va_list);
 	char					lm[3];
 	char					id[10];
-}							t_print
+}							t_print;
 
-t_f							glo_print[] = {
+t_print						glo_print[] = {
 							{&ft_print0, "", "i"},
 							{&ft_print1, "h", "i"},
 							{&ft_print2, "hh", "i"},
