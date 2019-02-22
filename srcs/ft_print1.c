@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 07:15:19 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/19 20:55:06 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/20 20:07:22 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	ft_print5(t_id *e, va_list args)
 	r = 0;
 	w = va_arg(args, int);
 	if ((e->fm & 4) != 4)
-		r = ((t = ft_wprocess0(e, w)) < 0) ? t : r + t;
-	r = (t >= 0 && (t = ft_pprocess0(e, w)) >= 0) ? r + t : t;
+		((t = ft_wprocess0(e, w)) >= 0) ? (r += t) : 0;
+	(t >= 0 && (t = ft_pprocess0(e, w)) >= 0) ? (r += t) : 0;
 	if ((e->fm & 4) == 4)
-		r = (t >= 0 && (t = ft_wprocess0(e, w)) >= 0) ? r + t : t;
-	return (r);
+		(t >= 0 && (t = ft_wprocess0(e, w)) >= 0) ? (r += t) : 0;
+	return ((t < 0) ? -1 : r);
 }
 
 int	ft_print6(t_id *e, va_list args)
@@ -39,11 +39,11 @@ int	ft_print6(t_id *e, va_list args)
 	r = 0;
 	s = va_arg(args, char *);
 	if ((e->fm & 4) != 4)
-		r = ((t = ft_wprocess1(e, s)) < 0) ? t : r + t;
-	r = (t >= 0 && (t = ft_pprocess1(e, s)) >= 0) ? r + t : t;
+		((t = ft_wprocess1(e, s)) >= 0) ? (r += t) : 0;
+	(t >= 0 && (t = ft_pprocess1(e, s)) >= 0) ? (r += t) : 0;
 	if ((e->fm & 4) == 4)
-		r = (t >= 0 && (t = ft_wprocess1(e, s)) >= 0) ? r + t : t;
-	return (r);
+		(t >= 0 && (t = ft_wprocess1(e, s)) >= 0) ? (r += t) : 0;
+	return ((t < 0) ? -1 : r);
 }
 
 int	ft_print7(t_id *e, va_list args)
@@ -56,11 +56,11 @@ int	ft_print7(t_id *e, va_list args)
 	r = 0;
 	ws = va_arg(args, wchar_t *);
 	if ((e->fm & 4) != 4)
-		r = ((t = ft_wprocess2(e, ws)) < 0) ? t : r + t;
-	r = (t >= 0 && (t = ft_pprocess2(e, ws)) >= 0) ? r + t : t;
+		((t = ft_wprocess2(e, ws)) >= 0) ? (r += t) : 0;
+	(t >= 0 && (t = ft_pprocess2(e, ws)) >= 0) ? (r += t) : 0;
 	if ((e->fm & 4) == 4)
-		r = (t >= 0 && (t = ft_wprocess2(e, ws)) >= 0) ? r + t : t;
-	return (r);
+		(t >= 0 && (t = ft_wprocess2(e, ws)) >= 0) ? (r += t) : 0;
+	return ((t < 0) ? -1 : r);
 }
 
 int	ft_print8(t_id *e, va_list args)
@@ -74,11 +74,11 @@ int	ft_print8(t_id *e, va_list args)
 	ui = va_arg(args, unsigned int);
 	ft_wcalc0(e, ui);
 	if ((e->fm & 4) != 4)
-		r = ((t = ft_wprocess3(e, ui)) < 0) ? t : r + t;
-	r = (t >= 0 && (t = ft_pprocess3(e, ui)) >= 0) ? r + t : t;
+		((t = ft_wprocess3(e, ui)) >= 0) ? (r += t) : 0;
+	(t >= 0 && (t = ft_pprocess3(e, ui)) >= 0) ? (r += t) : 0;
 	if ((e->fm & 4) == 4)
-		r = (t >= 0 && (t = ft_wprocess3(e, ui)) >= 0) ? r + t : t;
-	return (r);
+		(t >= 0 && (t = ft_wprocess3(e, ui)) >= 0) ? (r += t) : 0;
+	return ((t < 0) ? -1 : r);
 }
 
 int	ft_print9(t_id *e, va_list args)
@@ -92,9 +92,9 @@ int	ft_print9(t_id *e, va_list args)
 	us = (unsigned short)va_arg(args, unsigned int);
 	ft_wcalc0(e, us);
 	if ((e->fm & 4) != 4)
-		r = ((t = ft_wprocess3(e, us)) < 0) ? t : r + t;
-	r = (t >= 0 && (t = ft_pprocess3(e, us)) >= 0) ? r + t : t;
+		((t = ft_wprocess3(e, us)) >= 0) ? (r += t) : 0;
+	(t >= 0 && (t = ft_pprocess3(e, us)) >= 0) ? (r += t) : 0;
 	if ((e->fm & 4) == 4)
-		r = (t >= 0 && (t = ft_wprocess3(e, us)) >= 0) ? r + t : t;
-	return (r);
+		(t >= 0 && (t = ft_wprocess3(e, us)) >= 0) ? (r += t) : 0;
+	return ((t < 0) ? -1 : r);
 }

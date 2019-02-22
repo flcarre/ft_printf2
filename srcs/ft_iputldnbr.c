@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 17:17:57 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/19 20:51:06 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/20 15:50:35 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ static void	ft_print(unsigned int *p[4], t_id *e, long *r, char *s)
 {
 	char	buf[9 + 1];
 
-	while (r[0] != -1 && p[3] <= p[2])
+	while (r[1] >= 0 && p[3] <= p[2])
 	{
 		s = ft_ull(*p[3], buf + 9);
 		if ((p[3]++) != p[1])
@@ -100,20 +100,20 @@ static void	ft_print(unsigned int *p[4], t_id *e, long *r, char *s)
 				*(--s) = '0';
 		else if (s == buf + 9)
 			*(--s) = '0';
-		r[0] = ((r[1] = ft_iputnstr(s, buf + 9 - s)) < 0) ? r[1] : r[1] + r[0];
+		((r[1] = ft_iputnstr(s, buf + 9 - s)) >= 0) ? (r[0] += r[1]) : 0;
 	}
-	(r[0] != -1 && (e->p[0] || (e->fm & 16) == 16)) ? \
-	(r[0] = ((r[1] = ft_iputchar('.')) < 0) ? r[1] : r[1] + r[0]) : 0;
-	while (r[0] != -1 && p[3] < p[0] && e->p[0])
+	(r[1] >= 0 && (e->p[0] || (e->fm & 16) == 16) && \
+	(r[1] = ft_iputchar('.')) >= 0) ? (r[0] += r[1]) : 0;
+	while (r[1] >= 0 && p[3] < p[0] && e->p[0])
 	{
 		s = ft_ull(*(p[3]++), buf + 9);
 		while (s > buf)
 			*(--s) = '0';
-		r[0] = ((r[1] = ft_iputnstr(s, (9 <= e->p[0]) ? 9 : e->p[0])) < 0) ? \
-		r[1] : r[1] + r[0];
+		if ((r[1] = ft_iputnstr(s, (9 <= e->p[0]) ? 9 : e->p[0])) >= 0)
+			r[0] += r[1];
 		e->p[0] -= (9 <= e->p[0]) ? 9 : e->p[0];
 	}
-	r[0] = ((r[1] = ft_iputxchar('0', e->p[0])) < 0) ? r[1] : r[1] + r[0];
+	(r[1] >= 0 && (r[1] = ft_iputxchar('0', e->p[0])) < 0) ? (r[0] += r[1]) : 0;
 }
 
 long		ft_iputldnbr(long double x, t_id *e)
@@ -135,5 +135,6 @@ long		ft_iputldnbr(long double x, t_id *e)
 	(p[1] > p[2]) ? (p[1] = p[2]) : 0;
 	p[3] = p[1];
 	ft_print(p, e, r, (void *)0);
+	r[0] = (r[1] < 0) ? r[1] : r[0];
 	return (r[0]);
 }

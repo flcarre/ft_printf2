@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 15:20:22 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/19 15:49:20 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/20 16:22:42 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,17 @@ int			ft_pprocess2(t_id *e, wchar_t *ws)
 	r[0] = 0;
 	if (e->p[1])
 	{
-		r[0] = ((r[1] = ft_iputnwstr(ws, e->p[0])) < 0) ? r[1] : r[0] + r[1];
+		if (!ws && (r[1] = ft_iputnstr("(null)", e->p[0])) >= 0)
+			r[0] += r[1];
+		else if (ws && (r[1] = ft_iputnwstr(ws, e->p[0])) >= 0)
+			r[0] += r[1];
+		r[0] = (r[1] < 0) ? r[1] : r[0];
 		return ((int)r[0]);
 	}
-	r[0] = ((r[1] = ft_iputwstr(ws)) < 0) ? r[1] : r[0] + r[1];
+	if (!ws && (r[1] = ft_iputstr("(null)")) >= 0)
+		r[0] += r[1];
+	else if (ws && (r[1] = ft_iputwstr(ws)) >= 0)
+		r[0] += r[1];
+	r[0] = (r[1] < 0) ? r[1] : r[0];
 	return ((int)r[0]);
 }

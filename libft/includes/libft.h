@@ -6,15 +6,16 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:44:47 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/19 16:44:23 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/20 14:26:07 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define SIZE_LD_TX (LDBL_MANT_DIG + 28) / 29 + 1 + \
-					(LDBL_MAX_EXP + LDBL_MANT_DIG + 28 + 8) / 9
+# define PARTA LDBL_MANT_DIG + 28) / 29
+# define PARTB (LDBL_MAX_EXP + LDBL_MANT_DIG + 28 + 8
+# define SIZE_LD_TX (PARTA + 1 + PARTB) / 9
 
 char				*ft_ull(unsigned long long x, char *s);
 int					ft_signbit(double *x, long double *lx);

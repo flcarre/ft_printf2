@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 12:26:24 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/13 21:05:57 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/20 14:38:59 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ long	ft_iputnbr_base(long long n, char *base)
 			return (r);
 	}
 	if (x >= (unsigned long long)b)
-		((r = ft_iputnbr_base(x / b, base)) != -1 && (((i += r) > 0) ? i : !i) \
-		&& (r = ft_iputnbr_base(x % b, base)) != -1) ? (i += r) : 0;
+	{
+		((r = ft_iputnbr_base(x / b, base)) >= 0) ? (i += r) : 0;
+		(r >= 0 && (r = ft_iputnbr_base(x % b, base)) >= 0) ? (i += r) : 0;
+	}
 	else
-		((r = ft_iputchar(base[x])) != -1) ? (i += r) : 0;
+		((r = ft_iputchar(base[x])) >= 0) ? (i += r) : 0;
 	return ((r == -1) ? r : i);
 }

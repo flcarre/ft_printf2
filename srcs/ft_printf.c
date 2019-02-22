@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:04:14 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/11 21:48:39 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/21 15:58:08 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int		ft_printf(const char *format, ...)
 	{
 		if (*format == '%' && ft_converter((char **)&format, args, &r))
 			return (-1);
-		else
+		else if (*format != '%')
 		{
-			if (ft_iputchar(*format++) == -1)
+			if (*format && ft_iputchar(*format++) == -1)
 				return (-1);
 			r++;
 		}

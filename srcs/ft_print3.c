@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 07:15:19 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/19 16:55:02 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/20 20:17:57 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int	ft_print15(t_id *e, va_list args)
 	p = va_arg(args, void *);
 	ft_wcalc0(e, (unsigned long long)p);
 	if ((e->fm & 4) != 4)
-		r = ((t = ft_wprocess3(e, (unsigned long long)p)) < 0) ? t : r + t;
-	r = (t >= 0 && (t = ft_pprocess3(e, (unsigned long long)p)) >= 0) ? \
-	r + t : t;
+		((t = ft_wprocess3(e, (unsigned long long)p)) >= 0) ? (r += t) : 0;
+	(t >= 0 && (t = ft_pprocess3(e, (unsigned long long)p)) >= 0) ? \
+	(r += t) : 0;
 	if ((e->fm & 4) == 4)
-		r = (t >= 0 && (t = ft_wprocess3(e, (unsigned long long)p)) >= 0) ? \
-		r + t : t;
-	return (r);
+		(t >= 0 && (t = ft_wprocess3(e, (unsigned long long)p)) >= 0) ? \
+		(r += t) : 0;
+	return ((t < 0) ? -1 : r);
 }
 
 int	ft_print16(t_id *e, va_list args)

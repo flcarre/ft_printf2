@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 21:15:30 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/19 20:31:09 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/20 18:56:29 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int		ft_wprocess3(t_id *e, unsigned long long x)
 	long	r[2];
 
 	r[0] = 0;
+	r[1] = 0;
 	(void)x;
 	if ((e->fm & 8) != 8 || ((e->fm & 8) == 8 && (e->fm & 4) == 4) || e->p[1])
-		r[0] = ((r[1] = ft_iputxchar(' ', e->w)) < 0) ? r[1] : r[0] + r[1];
-	return ((int)r[0]);
+		((r[1] = ft_iputxchar(' ', e->w)) >= 0) ? (r[0] += r[1]) : 0;
+	return ((int)((r[1] < 0) ? -1 : r[0]));
 }

@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/14 15:54:36 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/20 14:45:30 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ static int	ft_printarg(t_id *e, va_list args, int *r)
 	t = 1;
 	i = 58 + 1;
 	while (t && --i)
-		if (!ft_strcmp(e->id, glo_print[i - 1].id) && \
-		!ft_strcmp(e->lm, glo_print[i - 1].lm))
+		if (!ft_strcmp(e->id, g_print[i - 1].id) && \
+		!ft_strcmp(e->lm, g_print[i - 1].lm))
 			t = 0;
-	if (i)
-		*r = ((t = glo_print[i - 1].f(e, args)) < 0) ? t : *r + t;
+	if (i && (t = g_print[i - 1].f(e, args)) >= 0)
+		*r += t;
+	else if (i && t < 0)
+		*r = t;
 	else
 		*r = -1;
 	return ((!i) ? 1 : 0);
