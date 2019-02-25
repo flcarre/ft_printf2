@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 07:15:19 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/20 20:17:57 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/21 19:55:26 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,15 @@ int	ft_print16(t_id *e, va_list args)
 
 int	ft_print17(t_id *e, va_list args)
 {
-	(void)e;
+	long	r[2];
+
 	(void)args;
-	return ((int)ft_iputchar('%'));
+	r[0] = 0;
+	e->w -= (e->w >= 1) ? 1 : e->w;
+	if ((e->fm & 8) != 8 || ((e->fm & 8) == 8 && (e->fm & 4) == 4) || e->p[1])
+		((r[1] = ft_iputxchar(' ', e->w)) >= 0) ? (r[0] += r[1]) : 0;
+	else
+		((r[1] = ft_iputxchar('0', e->w)) >= 0) ? (r[0] += r[1]) : 0;
+	(r[1] >= 0 && (r[1] = ft_iputchar('%')) >= 0) ? (r[0] += r[1]) : 0;
+	return ((int)(r[1] < 0) ? -1 : r[0]);
 }

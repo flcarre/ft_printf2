@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 21:15:30 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/20 18:17:54 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/21 19:24:54 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int		ft_wprocess0(t_id *e, long long x)
 	if (e->id[0] == 'c')
 	{
 		e->w -= (e->w >= 1) ? 1 : e->w;
-		if ((r[1] = ft_iputxchar(' ', e->w)) >= 0)
+		if (((e->fm & 8) != 8 || ((e->fm & 8) == 8 && (e->fm & 4) == 4)) && \
+		(r[1] = ft_iputxchar(' ', e->w)) >= 0)
 			r[0] += r[1];
 		return ((int)((r[1] < 0) ? -1 : r[0]));
 	}
@@ -32,7 +33,5 @@ int		ft_wprocess0(t_id *e, long long x)
 		e->w -= (e->w >= 1) ? 1 : e->w;
 	if ((e->fm & 8) != 8 || ((e->fm & 8) == 8 && (e->fm & 4) == 4) || e->p[1])
 		((r[1] = ft_iputxchar(' ', e->w)) >= 0) ? (r[0] += r[1]) : 0;
-	if ((e->fm & 8) == 8 && (e->fm & 4) != 4 && !e->p[1])
-		((r[1] = ft_iputxchar('0', e->w)) >= 0) ? (r[0] += r[1]) : 0;
 	return ((int)((r[1] < 0) ? -1 : r[0]));
 }
