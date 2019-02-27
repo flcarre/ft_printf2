@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 18:25:46 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/26 17:14:33 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/27 10:29:55 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,14 @@ static void	ft_lm(char **f, char *lm)
 	while ((*f)[n] && !ft_isid((*f)[n]))
 		n++;
 	lm[0] = (n && ft_strncmp(*f, "L", n) == 0) ? 'L' : '\0';
-	lm[0] = (n && (ft_strncmp(*f, "l", n) == 0 || \
+	lm[0] = (n && (ft_strncmp(*f, "z", n) == 0 || \
+					ft_strncmp(*f, "l", n) == 0 || \
+					ft_strncmp(*f, "j", n) == 0 || \
 					ft_strncmp(*f, "ll", n) == 0)) ? 'l' : lm[0];
 	lm[0] = (n && (ft_strncmp(*f, "h", n) == 0 || \
 					ft_strncmp(*f, "hh", n) == 0)) ? 'h' : lm[0];
-	lm[1] = (n > 1 && ft_strncmp(*f, "ll", n) == 0) ? 'l' : '\0';
+	lm[1] = (n > 1 && (ft_strncmp(*f, "j", n) == 0 || \
+					ft_strncmp(*f, "ll", n) == 0)) ? 'l' : '\0';
 	lm[1] = (n > 1 && ft_strncmp(*f, "hh", n) == 0) ? 'h' : lm[1];
 	lm[2] = '\0';
 	(*f) += ft_strlen(lm);
