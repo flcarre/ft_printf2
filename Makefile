@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/02/19 20:45:58 by flcarre          ###   ########.fr        #
+#    Updated: 2019/02/27 14:45:16 by flcarre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_dclassify.c \
 		  $(LIBDIR)$(SRCDIR)ft_signbit.c \
 		  $(LIBDIR)$(SRCDIR)ft_iputwchar.c \
+		  $(LIBDIR)$(SRCDIR)ft_wcharlen.c \
 		  $(LIBDIR)$(SRCDIR)ft_iputwstr.c \
 		  $(LIBDIR)$(SRCDIR)ft_iputnwstr.c \
 		  $(LIBDIR)$(SRCDIR)ft_atoui.c \

@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iputwchar.c                                     :+:      :+:    :+:   */
+/*   ft_wcharlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 15:42:17 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/27 15:42:42 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/27 15:40:05 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_iputwchar(int wc)
+unsigned long	ft_wcharlen(int wc)
 {
-	char	c[5];
+	unsigned long	n;
 
-	ft_bzero((void *)c, 5);
+	n = 0;
 	if (wc <= 0x7F)
-		c[0] = (char)wc;
+		n = 1;
 	else if (wc <= 0x7FF)
-	{
-		c[0] = (wc >> 6) + 0xC0;
-		c[1] = (wc & 0x3F) + 0x80;
-	}
+		n = 2;
 	else if (wc <= 0xFFFF)
-	{
-		c[0] = (wc >> 12) + 0xE0;
-		c[1] = ((wc >> 6) & 0x3F) + 0x80;
-		c[2] = (wc & 0x3F) + 0x80;
-	}
+		n = 3;
 	else
-	{
-		c[0] = (wc >> 18) + 0xF0;
-		c[1] = ((wc >> 12) & 0x3F) + 0x80;
-		c[2] = ((wc >> 6) & 0x3F) + 0x80;
-		c[3] = (wc & 0x3F) + 0x80;
-	}
-	return ((ft_iputstr(c) >> 63) ? -1 : ft_wcharlen(wc));
+		n = 4;
+	return (n);
 }

@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 21:15:30 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/21 19:24:54 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/27 16:27:23 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		ft_wprocess0(t_id *e, long long x)
 	long	r[2];
 
 	r[0] = 0;
+	e->w -= (e->id[0] != 'c' && x == 0 && e->w > 0 && !e->p[1]) ? 1 : 0;
 	if (e->id[0] == 'c')
 	{
 		e->w -= (e->w >= 1) ? 1 : e->w;
@@ -27,7 +28,7 @@ int		ft_wprocess0(t_id *e, long long x)
 	}
 	if (e->p[1] && e->p[0] > ft_digitlen(x, 10))
 		e->w = (e->w >= e->p[0]) ? e->w - e->p[0] : 0;
-	else
+	else if (x != 0)
 		e->w -= (e->w >= ft_digitlen(x, 10)) ? ft_digitlen(x, 10) : e->w;
 	if (x < 0 || (e->fm & 1) == 1 || (e->fm & 2) == 2)
 		e->w -= (e->w >= 1) ? 1 : e->w;

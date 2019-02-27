@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 15:49:10 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/09 17:48:14 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/27 14:38:37 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long	ft_iputwstr(int *ws)
 		return (i);
 	while (*ws)
 	{
-		if ((r = ft_iputwchar(*(ws++))) != -1)
+		if ((r = ft_iputwchar(*(ws)++)) != -1)
 			i += r;
 		else
 			return (r);

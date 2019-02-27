@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 15:49:10 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/19 20:47:10 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/27 14:51:25 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ long	ft_iputnwstr(int *ws, unsigned long n)
 	i = 0;
 	if (!ws || !n)
 		return (i);
-	while (n-- && *ws)
+	while (n && *ws)
 	{
 		if ((r = ft_iputwchar(*(ws++))) != -1)
 			i += r;
 		else
 			return (r);
+		n -= (n > (unsigned long)r) ? r : n;
 	}
 	return (i);
 }

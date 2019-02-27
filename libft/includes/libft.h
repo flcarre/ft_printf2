@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:44:47 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/20 14:26:07 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/27 15:40:45 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ long				ft_iputstr(char const *s);
 long				ft_iputnstr(char const *s, unsigned long n);
 long				ft_iputwchar(int wc);
 long				ft_iputwstr(int *ws);
+unsigned long		ft_wcharlen(int wc);
 long				ft_iputnwstr(int *ws, unsigned long n);
 long				ft_iputnbr_base(long long n, char *base);
 long				ft_iputunbr_base(unsigned long long n, char *base);
