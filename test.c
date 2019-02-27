@@ -1,13 +1,14 @@
+#include <locale.h>
+
 int main(int argc, char const *argv[]) {
-	ft_printf("?%5.x %5.0x?\n", 0, 0);
-	printf("!%5.x %5.0x!\n", 0, 0);
-	ft_printf("?%5.o %5.0o?\n", 0, 0);
-	printf("!%5.o %5.0o!\n", 0, 0);
-	ft_printf("?%5.d %5.0d?\n", 0, 0);
-  	printf("!%5.d %5.0d!\n", 0, 0);
-	ft_printf("?% u?\n", 4294967295);
-	printf("!% u!\n", 4294967295);
-	ft_printf("?%+u?\n", 4294967295);
-	printf("!%+u!\n", 4294967295);
+	setlocale(LC_ALL, "");
+	printf("%d\n" ,ft_printf("?%.4S?\n", L"ÊM-M-^QÊM-^XØ‰∏M-ÂM-^O™ÁM-^L´„M-M-^B"));
+	printf("%d\n\n" ,printf("!%.4S!\n", L"ÊM-M-^QÊM-^XØ‰∏M-ÂM-^O™ÁM-^L´„M-M-^B"));
+	printf("%d\n", ft_printf("?{% C}?\n", 0));
+	printf("%d\n", printf("!{% C}!\n", 0));
+	printf("%d\n", ft_printf("?{%05.Z}?\n", 0));
+	printf("%d\n", printf("!{%05.Z}!\n", 0));
+	printf("%d\n", ft_printf("?%hhC, %hhC?\n", 0, L'Á±≥'));
+	printf("%d\n", printf("!%hhC, %hhC!\n", 0, L'Á±≥'));
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/27 11:08:28 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/27 18:11:17 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 static void conv_maj(t_id *e)
 {
 	if (e->id[0] == 'D' || e->id[0] == 'U' || e->id[0] == 'O' \
-	|| e->id[0] == 'C' || e->id[0] == 'S')
+	|| e->id[0] == 'C' || e->id[0] == 'S' || e->id[0] == 'F')
 	{
 		e->lm[0] = 'l';
+		e->lm[1] = 0;
 		e->id[0] += 32;
 	}
 }
@@ -28,7 +29,7 @@ static int	ft_printarg(t_id *e, va_list args, int *r)
 	int		t;
 
 	t = 1;
-	i = 58 + 1;
+	i = 60 + 1;
 	conv_maj(e);
 	while (t && --i)
 		if (!ft_strcmp(e->id, g_print[i - 1].id) && \
@@ -51,7 +52,7 @@ int			ft_converter(char **fmt, va_list args, int *r)
 	ft_parse(&e, fmt, args);
 	if (ft_idisnull(&e))
 		return (1);
-	if (ft_printarg(&e, args, r))
+	if (e.id[0] && ft_printarg(&e, args, r))
 		return (1);
 	return (0);
 }

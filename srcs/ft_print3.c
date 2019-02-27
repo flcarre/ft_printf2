@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 07:15:19 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/27 12:30:47 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/02/27 17:17:42 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ int	ft_print17(t_id *e, va_list args)
 	else if ((e->fm & 4) != 4)
 		((r[1] = ft_iputxchar(' ', e->w)) >= 0) ? (r[0] += r[1]) : 0;
 	(r[1] >= 0 && (r[1] = ft_iputchar('%')) >= 0) ? (r[0] += r[1]) : 0;
-	if ((e->fm & 8) == 8 && (e->fm & 4) == 4)
-		((r[1] = ft_iputxchar('0', e->w)) >= 0) ? (r[0] += r[1]) : 0;
-	else if ((e->fm & 4) == 4)
+	if ((e->fm & 4) == 4)
 		((r[1] = ft_iputxchar(' ', e->w)) >= 0) ? (r[0] += r[1]) : 0;
 	return ((int)(r[1] < 0) ? -1 : r[0]);
 }

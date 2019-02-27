@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 02:05:05 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/20 14:16:11 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/02/27 17:37:43 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ t_print						g_print[] = {
 	{&ft_print13, "l", "f"},
 	{&ft_print14, "L", "f"},
 	{&ft_print15, "", "p"},
+	{&ft_print15, "l", "p"},
+	{&ft_print15, "ll", "p"},
 	{&ft_print16, "", "{}"},
 	{&ft_print16, "", "{BLACK}"},
 	{&ft_print16, "", "{RED}"},
