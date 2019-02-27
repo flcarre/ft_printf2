@@ -10,5 +10,7 @@ int main(int argc, char const *argv[]) {
 	printf("%d\n", printf("!{%05.Z}!\n", 0));
 	printf("%d\n", ft_printf("?%hhC, %hhC?\n", 0, L'Á±≥'));
 	printf("%d\n", printf("!%hhC, %hhC!\n", 0, L'Á±≥'));
+	ft_printf("%5.2f\n", 1.0 / 0.0);
+	printf("%5.2f\n", 1.0 / 0.0);
 	return 0;
 }
