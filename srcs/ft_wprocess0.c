@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 21:15:30 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/03/06 16:46:54 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/03/06 21:31:44 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int		ft_wprocess0(t_id *e, long long x)
 	e->w -= (e->id[0] != 'c' && x == 0 && e->w > 0 && !e->p[1]) ? 1 : 0;
 	if (e->id[0] == 'c')
 	{
-		e->w -= (e->w >= 1) ? 1 : e->w;
+		if (e->lm[0] == 'l')
+			e->w -= (e->w >= ft_wcharlen(x)) ? ft_wcharlen(x) : e->w;
+		else
+			e->w -= (e->w >= 1) ? 1 : e->w;
 		if (((e->fm & 8) != 8 || ((e->fm & 8) == 8 && (e->fm & 4) == 4)) && \
 		(r[1] = ft_iputxchar(' ', e->w)) >= 0)
 			r[0] += r[1];

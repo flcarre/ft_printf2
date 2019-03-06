@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/14 15:42:17 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/27 15:42:42 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/03/06 21:44:10 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ long	ft_iputwchar(int wc)
 
 	ft_bzero((void *)c, 5);
 	if (wc <= 0x7F)
-		c[0] = (char)wc;
+		return ((ft_iputchar((char)wc) >> 63) ? -1 : 1);
 	else if (wc <= 0x7FF)
 	{
 		c[0] = (wc >> 6) + 0xC0;

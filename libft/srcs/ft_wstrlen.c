@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 11:33:53 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/27 14:29:25 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/03/06 21:28:37 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ unsigned long	ft_wstrlen(const int *ws)
 	while (*(ws + i))
 	{
 		i++;
-		len += ft_wcharlen(*(ws));
+		len += ft_wcharlen(*(ws + i));
 	}
 	return (len);
 }
