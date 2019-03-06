@@ -6,11 +6,12 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 12:07:24 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/09 17:48:01 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/03/06 16:58:06 by flcarre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 long	ft_iputstr(char const *s)
 {
@@ -20,12 +21,9 @@ long	ft_iputstr(char const *s)
 	i = 0;
 	if (!s)
 		return (i);
-	while (*s)
-	{
-		if ((r = ft_iputchar(*(s++))) != -1)
-			i += r;
-		else
-			return (r);
-	}
+	if ((r = write(1, s, ft_strlen(s))) != -1)
+		i += r;
+	else
+		return (r);
 	return (i);
 }
