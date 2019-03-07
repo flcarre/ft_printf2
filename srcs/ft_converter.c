@@ -6,19 +6,21 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 16:50:09 by flcarre           #+#    #+#             */
-/*   Updated: 2019/02/27 18:11:17 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/03/07 04:53:10 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_glo_print.h"
 
-static void conv_maj(t_id *e)
+static void	conv_maj(t_id *e)
 {
 	if (e->id[0] == 'D' || e->id[0] == 'U' || e->id[0] == 'O' \
 	|| e->id[0] == 'C' || e->id[0] == 'S' || e->id[0] == 'F')
 	{
 		e->lm[0] = 'l';
 		e->lm[1] = 0;
+		if (e->id[0] == 'F')
+			e->p[1] = 2;
 		e->id[0] += 32;
 	}
 }

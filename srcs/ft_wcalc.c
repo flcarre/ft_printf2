@@ -6,7 +6,7 @@
 /*   By: flcarre <flcarre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 16:05:35 by flcarre           #+#    #+#             */
-/*   Updated: 2019/03/06 20:06:35 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/03/07 08:11:11 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ static void	ft_0(t_id *e, unsigned long long x)
 
 void		ft_wcalc0(t_id *e, unsigned long long x)
 {
+	if (e->id[0] == 'o' && (e->fm & 16) == 16 && e->p[1] && x != 0)
+		e->p[0] -= (e->p[0] >= 1) ? 1 : e->p[0];
 	ft_0(e, x);
-	// if (e->id[0] == 'o' && (e->fm & 16) == 16 && e->p[1])
-		// e->p[0] -= (e->p[0] >= 1) ? 1 : e->p[0];
 	if (e->id[0] == 'o' && (e->fm & 16) == 16 && x != 0)
 		e->w -= (e->w >= 1) ? 1 : e->w;
 	if ((e->id[0] == 'x' || e->id[0] == 'X') && (e->fm & 16) == 16 && x != 0)
@@ -52,12 +52,18 @@ void		ft_wcalc0(t_id *e, unsigned long long x)
 
 void		ft_wcalc1(t_id *e, long double x)
 {
-	e->w -= (e->w >= ft_ld_ldiglen(x, 10.0) + e->p[0]) ? \
-	ft_ld_ldiglen(x, 10.0) + e->p[0] : e->w;
-	if (!e->p[0] && (e->fm & 16) == 16)
+	long	r;
+
+	r = ft_simuldnbr(x, e);
+	if (ft_isnan(x) || ft_isinf(x))
+		e->w -= (e->w >= (unsigned int)r) ? (unsigned int)r : e->w;
+	else
+		e->w -= (e->w >= (unsigned int)r - 1) ? (unsigned int)r - 1 : e->w;
+	if (!e->p[0] && (e->fm & 16) == 16 && !ft_isnan(x) && !ft_isinf(x))
 		e->w -= (e->w >= 1) ? 1 : e->w;
-	else if (e->p[0])
+	else if (e->p[0] && !ft_isnan(x) && !ft_isinf(x))
 		e->w -= (e->w >= 1) ? 1 : e->w;
-	if (ft_signbit((void *)0, &x) || (e->fm & 1) == 1 || (e->fm & 2) == 2)
+	if (!ft_isnan(x) && (ft_signbit((void *)0, &x) || \
+	(e->fm & 1) == 1 || (e->fm & 2) == 2))
 		e->w -= (e->w >= 1) ? 1 : e->w;
 }

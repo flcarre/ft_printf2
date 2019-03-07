@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 18:07:32 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/19 20:55:42 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/03/07 07:18:31 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int							ft_idisnull(t_id *e);
 int							ft_isid(char c);
 int							ft_isfm(char c);
 long						ft_iputldnbr(long double x, t_id *e);
+long						ft_simuldnbr(long double x, t_id *e);
 int							ft_printcolor(t_id *e);
 void						ft_dorounding(unsigned int *p[4], t_id *e);
 int							ft_print0(t_id *e, va_list args);

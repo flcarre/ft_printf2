@@ -6,7 +6,7 @@
 #    By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/06 17:06:41 by lutsiara          #+#    #+#              #
-#    Updated: 2019/02/27 14:45:16 by flcarre          ###   ########.fr        #
+#    Updated: 2019/03/07 07:18:07 by lutsiara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,11 +59,11 @@ LIBSRCS = $(LIBDIR)$(SRCDIR)ft_atoi.c \
 		  $(LIBDIR)$(SRCDIR)ft_dclassify.c \
 		  $(LIBDIR)$(SRCDIR)ft_signbit.c \
 		  $(LIBDIR)$(SRCDIR)ft_iputwchar.c \
-		  $(LIBDIR)$(SRCDIR)ft_wcharlen.c \
 		  $(LIBDIR)$(SRCDIR)ft_iputwstr.c \
 		  $(LIBDIR)$(SRCDIR)ft_iputnwstr.c \
 		  $(LIBDIR)$(SRCDIR)ft_atoui.c \
 		  $(LIBDIR)$(SRCDIR)ft_wstrlen.c \
+		  $(LIBDIR)$(SRCDIR)ft_wcharlen.c \
 		  $(LIBDIR)$(SRCDIR)ft_ld_ldiglen.c \
 		  $(LIBDIR)$(SRCDIR)ft_ull.c \
 		  $(LIBDIR)$(SRCDIR)ft_udigitlen.c
@@ -78,6 +78,7 @@ SRCS = $(SRCDIR)ft_printf.c \
 	   $(SRCDIR)ft_isid.c \
 	   $(SRCDIR)ft_isfm.c \
 	   $(SRCDIR)ft_iputldnbr.c \
+	   $(SRCDIR)ft_simuldnbr.c \
 	   $(SRCDIR)ft_pprocess0.c \
 	   $(SRCDIR)ft_pprocess1.c \
 	   $(SRCDIR)ft_pprocess2.c \

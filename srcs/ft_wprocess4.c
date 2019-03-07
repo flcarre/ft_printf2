@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 21:15:30 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/20 19:06:16 by lutsiara         ###   ########.fr       */
+/*   Updated: 2019/03/07 05:18:04 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int		ft_wprocess4(t_id *e, long double x)
 	r[0] = 0;
 	r[1] = 0;
 	(void)x;
-	if ((e->fm & 8) != 8 || ((e->fm & 8) == 8 && (e->fm & 4) == 4))
+	if ((e->fm & 8) != 8 || ft_isnan(x) || \
+	ft_isinf(x) || ((e->fm & 8) == 8 && (e->fm & 4) == 4))
 		((r[1] = ft_iputxchar(' ', e->w)) >= 0) ? (r[0] += r[1]) : 0;
 	return ((int)((r[1] < 0) ? -1 : r[0]));
 }

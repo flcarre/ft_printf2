@@ -6,7 +6,7 @@
 /*   By: lutsiara <lutsiara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 20:07:54 by lutsiara          #+#    #+#             */
-/*   Updated: 2019/02/27 20:04:48 by flcarre          ###   ########.fr       */
+/*   Updated: 2019/03/07 07:42:12 by lutsiara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ unsigned int	ft_ld_ldiglen(long double n, long double base)
 		return (0);
 	if (ft_ldmod(base, 1.0L) != 0.0L || base < 2.0L)
 		return (0);
-	len = (n < 0.0L) ? 1 : 0;
-	len += (n < 1.0L && n > -1.0L) ? 1 : 0;
+	len = (n < 1.0L && n > -1.0L) ? 1 : 0;
 	while (n >= 1.0L || n <= -1.0L)
 	{
 		len++;
